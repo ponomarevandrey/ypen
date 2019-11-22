@@ -1,0 +1,117 @@
+.icons {
+  margin: 0em;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+
+  /*
+  &:not(:last-child) {
+    margin-right: 0.6em;
+  }
+  */
+
+  &__img {
+    background-size: cover;
+
+    /* Paths and strokes that overflow the viewBox can show in IE11. */
+    overflow: hidden;
+
+    align-self: center;
+    transition: opacity 0.2s ease;
+
+    &:link,
+    &:visited {
+      fill: $color_black;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.6;
+    }
+
+    // Modifiers:
+
+    // size
+
+    &_size {
+      &_sm {
+        width: 1.4em;
+        height: 1.4em;
+      }
+
+      &_md {
+        /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+        width: 1.7em;
+        height: 1.7em;
+      }
+
+      &_lg {
+        width: 2.4em;
+        height: 2.4em;
+      }
+    }
+
+    &_color {
+      // icons colored in brand colors:
+
+      &_github {
+        fill: $color_github;
+      }
+
+      &_facebook {
+        fill: $color_facebook;
+      }
+
+      &_instagram {
+        fill: $color_instagram;
+      }
+
+      &_odnoklassniki {
+        fill: $color_odnoklassniki;
+      }
+
+      &_telegram {
+        fill: $color_telegram;
+      }
+
+      &_twitter {
+        fill: $color_twitter;
+      }
+
+      &_youtube {
+        fill: $color_youtube;
+      }
+
+      &_vkontakte {
+        fill: $color_vkontakte;
+      }
+
+      // black icons:
+
+      &_black {
+        fill: $color_black;
+      }
+
+      // white icons:
+
+      &_white {
+        fill: $color_white;
+      }
+    }
+  }
+
+  &__access-label {
+    /* Visually hidden accessible label using styles that do not hide 
+    the text in screen readers */
+
+    /* We use !important because we should not apply other styles to this hidden alternative text */
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+
+    margin-right: 0.2em;
+  }
+}

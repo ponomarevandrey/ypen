@@ -1,0 +1,59 @@
+.blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  display: flex;
+
+  flex-flow: column nowrap;
+  font-size: 150%;
+  padding: 0.5em 0 0.5em 0;
+
+  &_theme_default {
+    border-top: 5px solid $color_black;
+    border-bottom: 5px solid $color_black;
+
+    & .blockquote__body {
+      font-weight: bold;
+      quotes: none;
+
+      &:first-of-type:before {
+        content: '\201c';
+      }
+
+      &:last-of-type:after {
+        content: '\201d';
+      }
+    }
+
+    & .blockquote__footer {
+      font-size: 80%;
+      align-self: flex-end;
+      padding-top: 1em;
+    }
+
+    & .blockquote__link {
+      &:link {
+        color: $color_link;
+        transition: color 0.2s linear;
+      }
+
+      &:visited {
+        color: $color_link;
+      }
+
+      &:hover {
+        color: lighten($color_link, 15%);
+        text-decoration: none;
+      }
+
+      a:focus {
+        color: lighten($color_link, 15%);
+      }
+
+      &:active {
+        color: lighten($color_link, 15%);
+      }
+    }
+  }
+}

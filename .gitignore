@@ -1,0 +1,71 @@
+# ignore vim session and temp files
+
+*.vim
+*.swo
+*.swp
+
+
+
+
+# ignore log files and databases
+
+*.log
+*.sql
+*.sqlite
+
+
+
+
+# ignore compiled files
+
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+
+
+
+# ignore packaged files
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
+
+
+# ignore some other files and folders recursively
+
+# VS Code settings folder and workspace file
+.vscode/                       
+*.code-workspace        
+
+# local source files (docs, graphics, audio, video, ...)           
+local-src/                        
+
+# other
+dist/
+node_modules/
+package-lock.json
+*~
+~*
+.*
+
+
+
+
+# Whitelisted Files (track these files, if they exist)
+
+!.gitignore
+!.prettierrc
+!.eslintrc.js
+!.eslintignore
+!.gitattributes

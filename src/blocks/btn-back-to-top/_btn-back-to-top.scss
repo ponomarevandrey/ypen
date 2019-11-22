@@ -1,0 +1,31 @@
+.btn-back-to-top {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 1.2rem;
+
+  display: none; // default state of the button is hidden
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1030; // guarantee that the button is always on top of other layers
+  outline: none;
+  background-color: $color_black;
+  color: $color_white;
+  padding: 15px;
+  border-radius: $border_radius;
+
+  &:hover {
+    background-color: $color_black;
+    color: $color_white;
+  }
+}

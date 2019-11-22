@@ -1,0 +1,161 @@
+.text {
+  /**************
+   * Modifiers: *
+   **************/
+
+  // display as regular text
+  &_display_inline {
+    display: inline;
+  }
+  // display as paragraph
+  &_display_block {
+    display: block;
+    text-indent: 0;
+    margin-bottom: 1em; /* space between paragraphs */
+  }
+
+  // size:
+
+  &_size_xs {
+    font-size: 0.7rem;
+  }
+
+  &_size_sm {
+    font-size: 0.87rem;
+  }
+
+  &_size_root {
+    font-size: $root_font-size;
+  }
+
+  &_size_lg {
+    font-size: 1.2rem;
+  }
+
+  &_size_xl {
+    font-size: 1.4rem;
+  }
+
+  // line-height:
+
+  &_line-height_xs {
+    line-height: 1.1;
+  }
+
+  &_line-height_sm {
+    line-height: 1.3;
+  }
+
+  &_line-height_md {
+    line-height: 1.5;
+  }
+
+  &_line-height_lg {
+    line-height: 1.7;
+  }
+
+  &_line-height_xl {
+    line-height: 1.9;
+  }
+
+  &_line-height_xxl {
+    line-height: 2.1;
+  }
+
+  // color:
+
+  &_color_white {
+    color: $color_white;
+  }
+
+  &_color_gray-lightest {
+    color: $color_gray-lightest;
+  }
+
+  &_color_gray-lighten {
+    color: $color_gray-lighten;
+  }
+
+  &_color_gray-light {
+    color: $color_gray-light;
+  }
+
+  &_color_gray {
+    color: $color_gray;
+  }
+
+  &_color_gray-dark {
+    color: $color_gray-dark;
+  }
+
+  &_color_gray-darken {
+    color: $color_gray-darken;
+  }
+
+  &_color_gray_darkest {
+    color: $color_gray_darkest;
+  }
+
+  &_color_black {
+    color: $color_black;
+  }
+
+  // semantic colors:
+  /*
+  &_color_primary {
+    color: $color_black;
+  }
+
+  &_color_secondary {
+    color: $color_secondary;
+  }
+*/
+  &_color_success {
+    color: $color_success;
+  }
+
+  &_color_warning {
+    color: $color_warning;
+  }
+
+  &_color_danger {
+    color: $color_danger;
+  }
+
+  &_color_info {
+    color: $color_info;
+  }
+
+  &_color_disabled {
+    color: $color_disabled;
+  }
+
+  // style
+
+  &_style_normal {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  &_style_bold {
+    font-weight: bold;
+  }
+
+  &_style_italic {
+    font-style: italic;
+  }
+
+  // font-stack:
+
+  &_font-stack_sans-serif {
+    font-family: $font-stack_sans-serif;
+  }
+
+  &_font-stack_serif {
+    font-family: $font-stack_serif;
+  }
+
+  &_font-stack_monospace {
+    font-family: $font-stack_monospace;
+  }
+}

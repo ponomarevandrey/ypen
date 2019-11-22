@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Home",
+    "url": "/",
+    "children": []
+  },
+  {
+    "title": "About",
+    "url": "/about",
+    "children": [
+      {
+        "title": "About Sub 1",
+        "utl": "/about-sub1",
+        "children": [
+          {
+            "title": "About Sub 1 Sub 1",
+            "url": "/about-sub1-sub1",
+            "children": []
+          },
+          {
+            "title": "About Sub 1 Sub 2",
+            "url": "/about-sub1-sub2",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "About Sub 2",
+        "url": "/about-sub2",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Contacts",
+    "url": "https://github.com/ponomarevandrey",
+    "children": []
+  }
+]

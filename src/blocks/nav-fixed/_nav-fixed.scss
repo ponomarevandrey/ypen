@@ -1,0 +1,60 @@
+.nav-fixed {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $color_black;
+  overflow: hidden;
+  position: fixed;
+  z-index: $zindex-fixed;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding: 1em 1em;
+  font-size: 1rem;
+  font-family: $font-stack_sans-serif;
+  line-height: 2;
+
+  height: 2em;
+
+  // if the parent container has paddings, ignore it:
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (min-width: $screen-md) {
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+
+  &__logo {
+    align-self: center;
+    width: 50%;
+    max-width: 9em;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-top: 1em;
+
+    @media screen and (min-width: $screen-md) {
+      padding-top: 0;
+    }
+  }
+
+  &__item {
+    color: $color_white;
+    text-decoration: none;
+
+    &:not(:last-child) {
+      padding-right: 1.6em;
+    }
+    // State Modifiers:
+    /*
+    &:hover,
+    &_active {
+      // border-bottom: 8px solid $color_primary-darkest;
+    }
+    */
+  }
+}

@@ -1,0 +1,14 @@
+.grid-forms {
+  display: grid;
+  grid-gap: 2rem 6%;
+  align-items: start; // vertical alignment of grid cells content
+  width: 100%;
+
+  @media screen and (min-width: $screen-sm) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  &_row {
+    grid-template-columns: 1fr;
+  }
+}

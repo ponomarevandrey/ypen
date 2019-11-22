@@ -1,0 +1,141 @@
+// Global SASS variables, mixins and functions
+
+// *************
+// * VARIABLES *
+// *************
+
+/* Typography */
+$root_font-size: 16px;
+
+$font-stack_sans-serif: Lato, Helvetica, Tahoma, Arial, Verdana, sans-serif;
+$font-stack_serif: Georgia, 'Big Caslon', 'Hoefler Text', Garamond, Baskerville,
+  'Palatino Linotype', 'Times New Roman', Times, serif;
+$font-stack_monospace: Consolas, 'Lucida Console', 'Lucida Sans Typewriter',
+  'Courier New', Courier, monospace;
+
+$font-size_h1: 3.052rem;
+$font-size_h2: 2.441rem;
+$font-size_h3: 1.953rem;
+$font-size_h4: 1.563rem;
+$font-size_h5: 1.25rem;
+$font-size_h6: 1rem;
+
+/* Colors */
+$color_white: white;
+$color_gray-lightest: #f2f2f2;
+$color_gray-lighten: #cccccc;
+$color_gray-light: #a6a6a6;
+$color_gray: #808080;
+$color_gray-dark: #595959;
+$color_gray-darken: #333333;
+$color_gray_darkest: #1a1a1a;
+$color_black: black;
+
+// $color_primary:
+// ...
+// $color_secondary:
+$color_success: #329a32;
+$color_warning: #f3c50c;
+$color_danger: #d40000;
+$color_info: #3ca8c3;
+$color_disabled: #939dac;
+
+$color_link: black;
+$color_code-text: #333;
+$color_code-bg: #f2d9e6;
+
+$form__box-shadow_state_initial: 0 0 0 0.2rem lighten($color_black, 88%);
+$form__border_state_initial: 1px solid $color_gray;
+
+$form__box-shadow_state_success: 0 0 0 0.2rem lighten($color_success, 48%);
+$form__border_state_success: 1px solid $color_success;
+
+$form__box-shadow_state_danger: 0 0 0 0.2rem lighten($color_danger, 50%);
+$form__border_state_danger: 1px solid $color_danger;
+
+$color_facebook: #1877f2;
+$color_github: #161514;
+$color_instagram: #000;
+$color_odnoklassniki: #f68634;
+$color_telegram: #0088cc;
+$color_twitter: #55acee;
+$color_youtube: #ff0000;
+$color_vkontakte: #4680c2;
+
+/* Media Quaries */
+$screen-xs: 0 !default;
+$screen-sm: 480px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1200px !default;
+$screen-xxl: 1800px !default;
+
+/* Z-indexes */
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+/* Other */
+$border_radius: 0.3em !default;
+
+// **********
+// * MIXINS *
+// **********
+
+// Typography
+@mixin font-face__regular {
+  font-family: Lato;
+  src: url('./lato-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-face__italic {
+  font-family: Lato;
+  src: url('./lato-italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@mixin font-face__bold {
+  font-family: Lato;
+  src: url('./lato-heavy.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Hide visually and from screen readers
+@mixin hidden-complitely {
+  display: none !important;
+}
+
+/* Hide only visually, but have it available for screen readers:
+   https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+
+@mixin hidden-visually {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+  visibility: hidden;
+}
+
+// *************
+// * FUNCTIONS *
+// *************

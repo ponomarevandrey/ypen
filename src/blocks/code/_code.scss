@@ -1,0 +1,23 @@
+.code {
+  border-radius: $border_radius;
+  white-space: pre-wrap;
+  // word-wrap: break-word;
+  border: none;
+  font-family: $font-stack_monospace;
+  box-sizing: border-box;
+  background-color: $color_code-bg;
+  color: $color_code-text;
+
+  &_display_block {
+    padding: 2em;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &_display_inline {
+    display: inline-block;
+    padding: 0 0.4rem;
+    margin: 0 0.1rem;
+  }
+}

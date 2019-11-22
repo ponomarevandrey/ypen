@@ -1,0 +1,66 @@
+.label {
+  display: inline-block;
+  margin: 0.2em 0.15em;
+  padding: 0 0.6em;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: $border_radius;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  // modifiers:
+
+  &_theme_black {
+    background-color: $color_black;
+    color: $color_white;
+    font-weight: bold;
+    border: 1px solid $color_white;
+    line-height: 1.8em;
+    font-size: 0.8em;
+
+    /*
+    &:link {
+    }
+    */
+
+    &:hover,
+    &:focus {
+      background-color: $color_gray-dark;
+      text-decoration: none;
+      color: $color_white;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: $form__box-shadow_state_initial;
+    }
+  }
+
+  &_theme_white {
+    background-color: $color_white;
+    color: $color_black;
+    font-weight: bold;
+    border: 1px solid $color_black;
+    line-height: 1.8em;
+    font-size: 0.8em;
+
+    &:link {
+      transition: all 0.2s ease;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color_black;
+      text-decoration: none;
+      color: $color_white;
+      border: 1px solid $color_white;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: $form__box-shadow_state_initial;
+    }
+  }
+}

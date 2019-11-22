@@ -1,0 +1,30 @@
+.badge {
+  display: inline-block;
+  margin: 0.2em 0.15em;
+  padding: 0 0.4em;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: $border_radius;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  line-height: 2em;
+  font-size: 1em;
+
+  // modifiers:
+
+  &_theme_black {
+    background-color: $color_black;
+    color: $color_white;
+    font-weight: bold;
+    border: 1px solid $color_white;
+  }
+
+  &_theme_white {
+    background-color: $color_white;
+    color: $color_black;
+    font-weight: bold;
+    border: 1px solid $color_black;
+  }
+}
