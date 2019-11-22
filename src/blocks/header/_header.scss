@@ -1,6 +1,26 @@
 .header {
   display: flex;
-  flex-flow: row wrap;
-  // background: $color_white;
-  // align-items: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  overflow: hidden;
+
+  flex: 0 1 1200px;
+  max-width: 1200px;
+  margin: 1.2rem auto;
+  padding: 0 4vw;
+
+  &__menu {
+    display: flex;
+    text-overflow: ellipsis;
+    font-family: $font-stack_open-sans;
+    font-weight: bold;
+    font-size: $font-size_xs;
+    margin: 0 0 0 2rem;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 0 0 4rem;
+    white-space: nowrap;
+  }
 }

@@ -1,8 +1,54 @@
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 1.2rem auto 3rem auto;
+  padding: 0 4vw;
 
-  padding: 2rem;
-  background: $color_white;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, auto);
+  grid-gap: 2rem;
+
+  @media screen and (min-width: $screen-sm) {
+    display: grid;
+    grid-template-columns: minmax(7rem, 0.3fr) 1fr minmax(5rem, 0.3fr);
+  }
+
+  //
+
+  &__logo {
+    padding-right: 4rem;
+  }
+
+  //
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    grid-gap: 1rem;
+
+    .footer__telephone {
+      font-weight: bold;
+    }
+  }
+
+  &__item {
+    padding-bottom: 1rem;
+  }
+
+  //
+
+  &__icons {
+    justify-self: flex-start;
+
+    @media screen and (min-width: $screen-sm) {
+      justify-self: flex-end;
+    }
+  }
+
+  &__icon {
+    text-decoration: none;
+  }
+
+  &__icon:not(:last-child) {
+    padding-right: 1rem;
+  }
 }

@@ -1,17 +1,67 @@
 extends template-index.pug
 
 block header
-  header(class='header heading')
-    div(class='test heading heading_size_h1') hkj 
+  header(class='header')
+    img(class='logo' src='./../blocks/logo/logo.png' alt='YPEN logo')
+    ul(class='header__menu')
+      li(class='header__item') Главная 
+      li(class='header__item') Сертификаты
+      li(class='header__item') Преимущества
+      li(class='header__item') Вебинары
+      li(class='header__item') +7 921 515 00 04
 
   
 
 block main 
-  main(class='main') Main content stuff
+  main(class='main')
+    div(class='main__section-wrapper main__section-wrapper_bgcolor_yellow') 
+      section(class='main__section') text
+    div(class='main__section-wrapper') 
+      section(class='main__section ') content
+    div(class='main__section-wrapper') 
+      section(class='main__section') text
 
-  
-  
+    div(class='section-otzivi-wrapper') 
+      section(class='section-otzivi')
+        header(class='heading heading_size_h1 section-otzivi__heading') Отзывы
+        div(class='section-otzivi__content')
+          div(class='embed')
+            iframe(
+              src='https://www.youtube.com/embed/PqwEsEKV-_g'
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            )
+
+          div(class='embed')
+            iframe(
+              src='https://www.youtube.com/embed/IPQoP0qLB8w'
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            )
+
+          div(class='embed')
+            iframe(
+              src='https://www.youtube.com/embed/RoUjk60gFdk'
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            )
 
 
 block footer
-  footer(class='footer') &copy; 2019
+  footer(class='footer')
+    img(class='logo footer__logo' src='./../blocks/logo/logo.png' alt='YPEN logo')
+    div(class='footer__menu')
+      div(class='footer__section') 
+        div(class='footer__item') Главная
+        div(class='footer__item') Преимущества
+      div(class='footer__section') 
+        div(class='footer__item') Вебинары
+        div(class='footer__item') Сертификаты
+      div(class='footer__section') 
+        div(class='footer__item footer__telephone') +7 921 515 00 04
+        div(class='footer__item') Доставка и оплата
+    div(class='footer__icons')
+      a(href='https://www.instagram.com/ypen.ru/' class='footer__icon') 
+        img(class='footer__icon' src='./../blocks/icons/instagram.png' alt='instagram icon')
+      a(href='https://vk.com/ypen_ru' class='footer__icon') 
+        img(class='footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
