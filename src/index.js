@@ -43,3 +43,5 @@ import './blocks/footer/_footer.scss';
 import './blocks/logo/_logo.scss';
 
 import './blocks/section-otzivi/_section-otzivi.scss';
+
+import './blocks/section-order/_section-order.scss';

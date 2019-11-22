@@ -1,7 +1,6 @@
 .section-otzivi-wrapper {
   background-color: #fafafa;
-  margin: 5rem 0;
-  padding: 5rem 0 0 0;
+  margin: 3rem 0;
 }
 
 .section-otzivi {
@@ -20,10 +19,13 @@
   }
 
   &__content {
-    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, auto);
+    grid-gap: 3%;
     margin: 2rem 0;
+
+    @media screen and (min-width: $screen-sm) {
+      grid-template-columns: repeat(3, 31.3%);
+    }
   }
 }

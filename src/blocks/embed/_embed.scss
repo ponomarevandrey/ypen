@@ -1,15 +1,9 @@
 .embed {
-  float: none;
-  clear: both;
-  width: 100%;
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 25px;
+  padding-top: 30px;
   height: 0;
-
-  &_ratio_4x3 {
-    padding-bottom: 75%;
-  }
+  overflow: hidden;
 }
 
 .embed iframe,

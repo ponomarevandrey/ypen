@@ -25,26 +25,27 @@ block main
       section(class='section-otzivi')
         header(class='heading heading_size_h1 section-otzivi__heading') Отзывы
         div(class='section-otzivi__content')
-          div(class='embed')
-            iframe(
-              src='https://www.youtube.com/embed/PqwEsEKV-_g'
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+          div
+            div(class='embed')
+              iframe(
+                src='https://www.youtube.com/embed/PqwEsEKV-_g'
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
             )
-
-          div(class='embed')
-            iframe(
-              src='https://www.youtube.com/embed/IPQoP0qLB8w'
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            )
-
-          div(class='embed')
-            iframe(
-              src='https://www.youtube.com/embed/RoUjk60gFdk'
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            )
+          div
+            div(class='embed')
+              iframe(
+                src='https://www.youtube.com/embed/IPQoP0qLB8w'
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+          div
+            div(class='embed')
+              iframe(
+                src='https://www.youtube.com/embed/RoUjk60gFdk'
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
 
 
 block footer
@@ -65,3 +66,22 @@ block footer
         img(class='footer__icon' src='./../blocks/icons/instagram.png' alt='instagram icon')
       a(href='https://vk.com/ypen_ru' class='footer__icon') 
         img(class='footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
+
+  script.
+
+    const sectionOtziviContentEl = 
+      document.querySelector('.section-otzivi__content');
+    const sectionOtziviEl = document.querySelector('.section-otzivi');
+    
+    function makeVideoResponsive(e) {
+      let windowWidth = parseInt(document.documentElement.clientWidth);
+      if (windowWidth < 480) {
+        sectionOtziviEl.style.height = `${parseInt(getComputedStyle(sectionOtziviContentEl).height) + 250}px`;
+      } else {
+        sectionOtziviEl.style.height = `${parseInt(getComputedStyle(sectionOtziviContentEl).height) + 200}px`;
+      }
+    }
+
+    window.addEventListener('resize', makeVideoResponsive);
+    window.addEventListener('load', makeVideoResponsive);
+    
