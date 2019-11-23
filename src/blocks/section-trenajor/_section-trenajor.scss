@@ -1,5 +1,6 @@
 .section-trenajor-wrapper {
   margin: 3rem 0;
+  position: relative;
 }
 
 .section-trenajor {
@@ -8,8 +9,55 @@
   max-width: 1200px;
   margin: 1.2rem auto;
   padding: 4rem 4vw;
-  text-align: center;
-  overflow: hidden;
+
+  //-
+
+  &__map {
+  }
+
+  &__photo-pen-wrapper {
+    border: 1px solid red;
+    box-sizing: border-box;
+    max-width: 1500px;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto;
+    flex-flow: column nowrap;
+    position: relative;
+  }
+
+  &__photo-pen {
+    max-width: 98%;
+  }
+
+  &__dots {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 1200px;
+    margin: 1.2rem auto;
+    padding: 4rem 4vw;
+    position: relative;
+
+    border: 1px solid red;
+    top: 100px;
+  }
+
+  &__dot1 {
+    position: absolute;
+    top: -30px;
+    left: 10em;
+  }
+  &__dot2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+  &__dot3 {
+    position: absolute;
+    top: 20px;
+  }
+
+  //-
 
   &__content {
     display: grid;
@@ -23,5 +71,24 @@
       grid-gap: 4rem;
       align-items: center;
     }
+  }
+
+  &__about {
+    max-width: 30rem;
+    margin: 4rem 0;
+  }
+
+  &__note-box {
+    display: grid;
+    grid-template-columns: minmax(80px, 0.3fr) 1fr;
+    max-width: 800px;
+    align-items: center;
+  }
+
+  &__note {
+  }
+
+  &__photo_lego-man {
+    max-width: 100%;
   }
 }
