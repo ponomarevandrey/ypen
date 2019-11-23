@@ -30,13 +30,13 @@ import './blocks/embed/_embed.scss';
 /***************** Redefinition level 'blocks' *******************/
 
 import './blocks/page/_page.scss';
-import './blocks/page/page.js';
+// import './blocks/page/page.js';
 
 import './blocks/grid-page-layout1/_grid-page-layout1.scss';
 
 import './blocks/grid-page-layout2/_grid-page-layout2.scss';
 
-import './blocks/main/_main.scss';
+// import './blocks/main/_main.scss';
 
 import './blocks/footer/_footer.scss';
 

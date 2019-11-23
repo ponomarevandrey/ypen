@@ -18,12 +18,62 @@ block main
       section(class='main__section') text
     div(class='main__section-wrapper') 
       section(class='main__section ') content
-    div(class='main__section-wrapper') 
-      section(class='main__section') text
+
+    //-
+
+    div(class='section-order-wrapper') 
+      section(class='section-order') 
+        header(class='section-order__header')
+          h1(class='heading heading_size_h1 section-order__heading') Выбрать свою Ypen
+          span(class='heading section-order__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
+      
+        div(class='section-order__select-pen-box')
+          img(class='section-order__selected-pen-photo' src='./../blocks/section-order/pen1.png' alt='Blue color pen')
+          div(class='section-order__photos-group')
+            img(class='section-order__pen-photo' src='./../blocks/section-order/pen2.png' alt='Red color pen')
+            img(class='section-order__pen-photo' src='./../blocks/section-order/pen3.png' alt='Turquoise color pen')
+            img(class='section-order__pen-photo ' src='./../blocks/section-order/pen4.png' alt='White color pen')
+          div(class='section-order__price-box') 
+            span(class='section-order__price-sum') 
+              span(class='section-order__price-figures') 890
+              span(class='section-order__currency') руб. 
+            span(class='section-order__price-comment') При заказе от 10 штук #[strong цена 800 рублей]
+      
+        div(class='section-order__make-order-box')
+          div(class='section-order__frame')
+            div(class='form-group')
+              label(
+                class='form-group__label'
+                for='name') 
+                span(class='form-group__heading') Оставьте заявку
+                span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
+              div(class='form-group__container')
+                input(
+                  class='form-group__input'
+                  type='text'
+                  id='name'
+                  name='name'
+                  placeholder='Ваше имя')
+                //-
+                  div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum
+                input(
+                  class='form-group__input'
+                  type='text'
+                  id='tel'
+                  name='tel'
+                  placeholder='+7 (999) 999-99-99')
+                //-
+                  div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
+                button(type='button' class='btn btn_theme_yellow btn_size_md') Заказать
+                div(class='form-group__privacy-policy') Политика конфиденциальности
+
+
+
+  //-
 
     div(class='section-otzivi-wrapper') 
       section(class='section-otzivi')
-        header(class='heading heading_size_h1 section-otzivi__heading') Отзывы
+        h1(class='heading heading_size_h1 section-otzivi__heading') Отзывы
         div(class='section-otzivi__content')
           div
             div(class='embed')
@@ -82,6 +132,6 @@ block footer
       }
     }
 
-    window.addEventListener('resize', makeVideoResponsive);
-    window.addEventListener('load', makeVideoResponsive);
+    //window.addEventListener('resize', makeVideoResponsive);
+    //window.addEventListener('load', makeVideoResponsive);
     

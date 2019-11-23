@@ -5,6 +5,12 @@
 
 .form-group {
   display: grid;
+  grid-gap: 1.2rem;
+
+  &__privacy-policy {
+    margin-top: 1rem;
+    color: $color_gray-light;
+  }
 
   & * {
     box-sizing: border-box;
@@ -12,26 +18,43 @@
 
   &__container {
     position: relative;
+    display: grid;
+    grid-gap: 1rem;
   }
 
   &__label {
     overflow-wrap: break-word;
     margin-bottom: 0.4rem;
+    color: $color_brand_blue;
+    font-family: $font-stack_gill-sans;
+  }
+
+  &__heading {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+  }
+
+  &__subheading {
+    display: block;
+    font-size: $font-size_root;
   }
 
   &__input {
     width: 100%;
     height: calc(2rem + 2px);
-    padding: 0.5rem 0.5rem;
-    border: $form__border_state_initial;
+    padding: 2rem;
+    border: 1px solid transparent;
     resize: vertical;
-    background-color: $color_white;
+    background-color: #f8f8f8;
     font-family: $font-stack_open-sans;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: $border_radius;
+    border-radius: 1000px;
     transition: 0.2s;
-    color: $color_black;
+    color: $color_gray;
+    box-sizing: border-box;
 
     &::placeholder {
       color: $color_gray;

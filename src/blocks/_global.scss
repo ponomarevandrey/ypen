@@ -46,6 +46,7 @@ $color_black: black;
 
 // $color_primary:
 $color_brand_yellow: #ffcc33;
+$color_brand_yellow_hover: #ffbf00;
 $color_brand_blue: #3348a2;
 
 // $color_secondary:
@@ -60,7 +61,7 @@ $color_code-text: #333;
 $color_code-bg: #f2d9e6;
 
 $form__box-shadow_state_initial: 0 0 0 0.2rem lighten($color_black, 88%);
-$form__border_state_initial: 1px solid $color_gray;
+$form__border_state_initial: 1px solid $color_gray-lightest;
 
 $form__box-shadow_state_success: 0 0 0 0.2rem lighten($color_success, 48%);
 $form__border_state_success: 1px solid $color_success;
