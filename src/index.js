@@ -45,3 +45,11 @@ import './blocks/logo/_logo.scss';
 import './blocks/section-otzivi/_section-otzivi.scss';
 
 import './blocks/section-order/_section-order.scss';
+
+import './blocks/section-obuchayushiy-vebinar/_section-obuchayushiy-vebinar.scss';
+
+import './blocks/section-nagradi/_section-nagradi.scss';
+
+import './blocks/section-zdorovoe-zrenie/_section-zdorovoe-zrenie.scss';
+
+import './blocks/section-trenajor/_section-trenajor.scss';

@@ -1,0 +1,27 @@
+.section-trenajor-wrapper {
+  margin: 3rem 0;
+}
+
+.section-trenajor {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 1200px;
+  margin: 1.2rem auto;
+  padding: 4rem 4vw;
+  text-align: center;
+  overflow: hidden;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding-top: 4rem;
+
+    @media screen and (min-width: $screen-md) {
+      text-align: center;
+      grid-template-columns: minmax(150px, 0.5fr) 1fr;
+      grid-gap: 4rem;
+      align-items: center;
+    }
+  }
+}

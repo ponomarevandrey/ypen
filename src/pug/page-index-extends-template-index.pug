@@ -16,8 +16,83 @@ block main
   main(class='main')
     div(class='main__section-wrapper main__section-wrapper_bgcolor_yellow') 
       section(class='main__section') text
-    div(class='main__section-wrapper') 
-      section(class='main__section ') content
+
+    //-
+
+    div(class='section-trenajor-wrapper') 
+      section(class='section-trenajor') 
+        div(class='section-trenajor__content')
+          img(class='section-trenajor__photo section-trenajor__photo_boy' src='./../blocks/section-trenajor/pen.png' alt='Pen')
+          article(class='section-trenajor__text') 
+
+    //-
+
+    div(class='section-zdorovoe-zrenie-wrapper') 
+      section(class='section-zdorovoe-zrenie') 
+        div(class='section-zdorovoe-zrenie__content')
+          img(class='section-zdorovoe-zrenie__photo section-zdorovoe-zrenie__photo_boy' src='./../blocks/section-zdorovoe-zrenie/boy.png' alt='Boy')
+          article(class='section-zdorovoe-zrenie__text') 
+            h1(class='heading heading_size_h1 section-zdorovoe-zrenie__heading') Здоровое зрение
+            p(class='text text_display_block') Из-за неправильного положения за партой при письме, неудобного положения руки, многие дети начинают "писать носом", а это рано или поздно приводит к ухудшению зрения. 
+            p(class='text text_display_block') При использовании Ypen дети больше не наклоняются близко к тетради, расстояние между глазами и рабочей поверхностью оптимально для сохранения здоровая и хорошего зрения
+            img(class='section-zdorovoe-zrenie__photo section-zdorovoe-zrenie__photo_handwriting' src='./../blocks/section-zdorovoe-zrenie/handwriting.png' alt='Сохранение здоровья зрения')
+            img(class='section-zdorovoe-zrenie-wrapper__dot1' src='./../blocks/section-zdorovoe-zrenie/dot.png')
+            img(class='section-zdorovoe-zrenie-wrapper__dot3' src='./../blocks/section-zdorovoe-zrenie/dot.png')
+
+      img(class='section-zdorovoe-zrenie-wrapper__dot2' src='./../blocks/section-zdorovoe-zrenie/dot.png')
+
+    //-
+
+    div(class='section-nagradi-wrapper') 
+      section(class='section-nagradi') 
+        h1(class='heading heading_size_h1 section-nagradi__heading') Совершенствуем ручку 24/7
+        div(class='section-nagradi__about')
+          p(class='text text_display_block') Придумана, разработана и создана отцом и сыном Пайкачёвыми из города Мурманска
+        div(class='section-nagradi__steps-box')          
+          img(class='section-nagradi__img1' src='./../blocks/section-nagradi/step1.png' alt='Октябрь 2018')
+          img(class='section-nagradi__img2' src='./../blocks/section-nagradi/step2.png' alt='Январь 2018')
+          img(class='section-nagradi__img3' src='./../blocks/section-nagradi/step3.png' alt='Сентябрь 2019')
+          img(class='section-nagradi__line' src='./../blocks/section-nagradi/line.png' alt='Линия')
+          div(class='section-nagradi__october') Октябрь 2018 
+          div(class='section-nagradi__january') Январь 2018 
+          div(class='section-nagradi__september') Сентябрь 2019
+        
+        
+
+
+        h1(class='heading heading_size_h1 section-nagradi__heading') Награды и сертификаты
+        div(class='section-nagradi__certificates')
+          div(class='section-nagradi__item')
+            div(class='section-nagradi__circle')
+              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert1.png' alt='Certificate')
+            span(class='section-nagradi__name') Патент «Устройство для письма и рисования»
+          div(class='section-nagradi__item')
+            div(class='section-nagradi__circle')
+              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert2.png' alt='Certificate')
+            span(class='section-nagradi__name') Диплом за 1 место в конкурсе научных и инженерных работ
+          div(class='section-nagradi__item')
+            div(class='section-nagradi__circle')
+              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert3.png' alt='Certificate')
+            span(class='section-nagradi__name') Сертификат на грант
+          div(class='section-nagradi__item')
+            div(class='section-nagradi__circle')
+              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert4.png' alt='Certificate')
+            span(class='section-nagradi__name') Диплом «Интеллект будущего»
+
+    //-
+
+    div(class='section-obuchayushiy-vebinar-wrapper') 
+      section(class='section-obuchayushiy-vebinar') 
+        h1(class='heading heading_size_h1') Обучающий вебинар для учителей начальных классов и родителей
+        div(class='section-obuchayushiy-vebinar__content')
+          img(class='section-obuchayushiy-vebinar__photo' src='./../blocks/section-obuchayushiy-vebinar/ep-photo.png' alt='Evgeniy Paykachev Photo')
+          article(class='section-obuchayushiy-vebinar__text') 
+            h5(class='heading heading_size_h5 section-obuchayushiy-vebinar__subheading') В вебинаре вы узнаете:
+            p(class='text text_display_block') #[strong 1.] Устройство Ypen, почему она работает, получите пошаговый план и дорожную карту достижение результата за 7 дней, правила постановки руки для письма. 
+            p(class='text text_display_block') #[strong 2.] Как закон Ньютона находит применение в ручке Ypen и чем Ypen отличается от обычной ручки.
+            p(class='text text_display_block') #[strong 3.] Правила подготовки рабочей зоны для письма, методику упражнений для расслабления и переноса внимания для детей на уроке.
+            p(class='text text_display_block') #[strong 4.] Разбор типичных ошибок положения тела и ручки при письме, способы исправления осанки, расположения кисти.
+            a(class='btn btn_theme_white section-obuchayushiy-vebinar__btn' href='###') Записаться на вебинар
 
     //-
 
@@ -64,7 +139,7 @@ block main
                   placeholder='+7 (999) 999-99-99')
                 //-
                   div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-                button(type='button' class='btn btn_theme_yellow btn_size_md') Заказать
+                button(type='button' class='btn btn_theme_yellow section-order_btn') Заказать
                 div(class='form-group__privacy-policy') Политика конфиденциальности
 
 

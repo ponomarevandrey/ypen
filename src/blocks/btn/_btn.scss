@@ -5,12 +5,22 @@
   text-decoration: none;
   outline: none;
   border: 0;
+  white-space: nowrap;
   transition: transform 0.2s ease, background-color 0.2s ease,
     box-shadow 0.2s ease;
-  white-space: nowrap;
+
   box-sizing: border-box;
   vertical-align: middle;
   font-weight: bold;
+  font-family: $font-stack_gill-sans;
+  color: black;
+  display: inline-block;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 1000px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  font-size: $font-size_root;
 
   line-height: 1.2rem;
   min-width: 6rem;
@@ -27,15 +37,7 @@
   }
 
   &_theme_yellow {
-    color: black;
     background-color: $color_brand_yellow;
-    display: inline-block;
-    position: relative;
-    padding: 1.5rem;
-    border-radius: 1000px;
-    text-transform: uppercase;
-    width: 100%;
-    border: 1px solid transparent;
 
     &:hover {
       background-color: $color_brand_yellow_hover;
@@ -51,18 +53,11 @@
     }
   }
 
-  &_theme_empty {
-    color: $color_black;
-    background-color: none;
-    display: inline-block;
-    position: relative;
-    padding: 0.8rem 1rem;
-    border-radius: $border_radius;
-    border: 1px solid $color_black;
+  &_theme_white {
+    background-color: $color_white;
 
     &:hover {
-      background-color: $color_black;
-      color: $color_white;
+      background-color: $color_brand_white_hover;
     }
 
     &:focus {

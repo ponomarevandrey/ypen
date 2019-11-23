@@ -18,9 +18,15 @@
     color: $color_brand_blue;
   }
 
+  &__photo {
+    max-width: 20rem;
+  }
+
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, auto);
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid red;
+    grid-auto-columns: column;
     grid-gap: 3%;
     margin: 2rem 0;
 

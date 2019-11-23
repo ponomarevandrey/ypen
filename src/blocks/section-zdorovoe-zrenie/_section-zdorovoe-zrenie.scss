@@ -1,0 +1,62 @@
+.section-zdorovoe-zrenie-wrapper {
+  background-color: $color_brand_yellow;
+  margin: 3rem 0;
+  position: relative;
+
+  &__dot1 {
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    width: 42px;
+  }
+  &__dot2 {
+    position: absolute;
+    right: 13vw;
+    bottom: -20px;
+  }
+  &__dot3 {
+    position: absolute;
+    top: -50px;
+    right: 350px;
+    width: 30px;
+  }
+}
+
+.section-zdorovoe-zrenie {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 1200px;
+  margin: 1.2rem auto;
+  padding: 4rem 4vw;
+  overflow: hidden;
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 2rem 0;
+
+    @media screen and (min-width: $screen-md) {
+      grid-template-columns: minmax(300px, 0.7fr) 1fr;
+      grid-gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  &__photo {
+    max-width: 100%;
+
+    &_handwriting {
+      padding-top: 2rem;
+    }
+  }
+
+  &__text {
+    font-size: $font-size_lg;
+    position: relative;
+  }
+}
