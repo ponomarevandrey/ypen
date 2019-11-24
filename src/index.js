@@ -36,7 +36,7 @@ import './blocks/grid-page-layout1/_grid-page-layout1.scss';
 
 import './blocks/grid-page-layout2/_grid-page-layout2.scss';
 
-// import './blocks/main/_main.scss';
+import './blocks/main/_main.scss';
 
 import './blocks/footer/_footer.scss';
 
@@ -53,3 +53,7 @@ import './blocks/section-nagradi/_section-nagradi.scss';
 import './blocks/section-zdorovoe-zrenie/_section-zdorovoe-zrenie.scss';
 
 import './blocks/section-trenajor/_section-trenajor.scss';
+
+import './blocks/section-pravilnaya-osanka/_section-pravilnaya-osanka.scss';
+
+import './blocks/section-pismo-bez/_section-pismo-bez.scss';
