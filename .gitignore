@@ -52,7 +52,6 @@
 local-src/                        
 
 # other
-dist/
 node_modules/
 package-lock.json
 *~
