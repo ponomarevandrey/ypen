@@ -10,171 +10,189 @@ block header
       li(class='header__item') Вебинары
       li(class='header__item') +7 921 515 00 04
 
-  
 
 block main 
   main(class='main')
-    div(class='main__section-wrapper main__section-wrapper_bgcolor_yellow') 
-      section(class='main__section') text
 
+    div(class='section1-wrapper') 
+      section(class='section1') 
+        div(class='section1__order')
+          img(class='section1__photo' src='./../blocks/section1/handwriting-pocherk.png' alt='Почерк')
+          h1(class='heading heading_size_h1 section1__heading') Без усталости за 7 дней
+          button(type='button' class='btn btn_theme_white section8_btn') Заказать
+        div(class='section1__presentation section1_align_r')
+          img(class='section1__photo' src='./../blocks/section1/pen-presentation.png' alt='Pen')
+        div(class='section1__contacts')
+          p(class='text text_display_inline') Подписывайтесь на нас&nbsp;&nbsp;&nbsp;—
+          a(href='https://www.instagram.com/ypen.ru/' class='icons') 
+            img(class='section1__photo icons__img' src='./../blocks/section1/instagram.png' alt='instagram icon')
+          a(href='https://vk.com/ypen_ru' class='icons') 
+            img(class='section1__photo icons__img' src='./../blocks/section1/vk.png' alt='vk icon')
+        div(class='section1__video section1_align_r')
+          div(class='section1__video-note-box')
+            img(class='section1__flag' src='./../blocks/section1/flag.png' alt='Почерк')
+            span(class='section1__video-note-text') Придумана и производится в России вручную
+          div(class='embed')
+            iframe(class='section1__video-preview' src="https://www.youtube.com/embed/1N2vRznEQQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          
     //-
 
-    div(class='section-pismo-bez-wrapper') 
-      section(class='section-pismo-bez') 
-        article(class='section-pismo-bez__text') 
-          h1(class='heading heading_size_h1 section-pismo-bez__heading') Письмо без боли, синяков и усталости
+    div(class='section2-wrapper') 
+      section(class='section2') 
+        article(class='section2__text') 
+          h1(class='heading heading_size_h1 section2__heading') Письмо без боли, синяков и усталости
           p(class='text text_display_block') За счет физиологичной формы #[string Ypen можно держать только правильно и никак иначе]. За счет правильного упора во время письма перераспределяется нагрузка с пальцев на ладонь и снимается усталость.
           p(class='text text_display_block') #[strong Ypen подходит для левшей и правшей], для школьников и тех, кто только собирается им стать.
           p(class='text text_display_block') Ypen — отличный инструмент для #[strong подготовки ребенка к школе] и для обучения в начальных классах.
-        img(class='section-pismo-bez__photo' src='./../blocks/section-pismo-bez/hand.png' alt='Hand')
-
+        img(class='section2__photo' src='./../blocks/section2/hand.png' alt='Hand')
 
     //-
 
-    div(class='section-pravilnaya-osanka-wrapper') 
-      section(class='section-pravilnaya-osanka') 
-        img(class='section-pravilnaya-osanka__bokeh1' src='./../blocks/section-pravilnaya-osanka/bokeh.png' alt='Боке')
-        img(class='section-pravilnaya-osanka__bokeh2' src='./../blocks/section-pravilnaya-osanka/bokeh.png' alt='Боке')
-        img(class='section-pravilnaya-osanka__bokeh3' src='./../blocks/section-pravilnaya-osanka/bokeh.png' alt='Боке')
-        div(class='section-pravilnaya-osanka__boy-box')
-          img(class='section-pravilnaya-osanka__photo-boy' src='./../blocks/section-pravilnaya-osanka/boy-back.png' alt='Boy')
-          img(class='section-pravilnaya-osanka__circle' src='./../blocks/section-pravilnaya-osanka/wcircle.png' alt='Circle')
-          div(class='section-pravilnaya-osanka__underlay') 
-            span(class='section-pravilnaya-osanka__large-text') YPEN
-            img(class='section-pravilnaya-osanka__photo-handwriting' src='./../blocks/section-pravilnaya-osanka/handwriting-pravilnaya-osanka.png' alt='Правильная осанка')
-        article(class='section-pravilnaya-osanka__info-box') 
-          h1(class='heading heading_size_h1 section-pravilnaya-osanka__heading') Правильная осанка при письме
+    div(class='section3-wrapper') 
+      section(class='section3') 
+        img(class='section3__bokeh1' src='./../blocks/section3/bokeh.png' alt='Боке')
+        img(class='section3__bokeh2' src='./../blocks/section3/bokeh.png' alt='Боке')
+        img(class='section3__bokeh3' src='./../blocks/section3/bokeh.png' alt='Боке')
+        div(class='section3__boy-box')
+          img(class='section3__photo-boy' src='./../blocks/section3/boy-back.png' alt='Boy')
+          img(class='section3__circle' src='./../blocks/section3/wcircle.png' alt='Circle')
+          div(class='section3__underlay') 
+            span(class='section3__large-text') YPEN
+            img(class='section3__photo-handwriting' src='./../blocks/section3/handwriting-pravilnaya-osanka.png' alt='Правильная осанка')
+        article(class='section3__info-box') 
+          h1(class='heading heading_size_h1 section3__heading') Правильная осанка при письме
           p(class='text text_display_block') Правильное удобное расположение ручки в руке #[strong снимает нагрузку с спины, выравнивает осанку] и бережет детские спины от сколиоза, а глаза — от близорукости.
           p(class='text text_display_block') Ежедневно используется детьми на всей территории России, каждый день целые классы переходят с обычной ручки на Ypen
-          div(class='section-pravilnaya-osanka__subgrid')
-            img(class='section-pravilnaya-osanka__photo-children1' src='./../blocks/section-pravilnaya-osanka/gallery002.png' alt='Фото')
-            img(class='section-pravilnaya-osanka__photo-children2' src='./../blocks/section-pravilnaya-osanka/gallery003.png' alt='Фото')
-            img(class='section-pravilnaya-osanka__photo-children3' src='./../blocks/section-pravilnaya-osanka/gallery001.png' alt='Фото')
-            img(class='section-pravilnaya-osanka__photo-children4' src='./../blocks/section-pravilnaya-osanka/gallery004.png' alt='Фото')
-            img(class='section-pravilnaya-osanka__photo-children5' src='./../blocks/section-pravilnaya-osanka/gallery005.png' alt='Фото')
+          div(class='section3__subgrid')
+            img(class='section3__photo-children1' src='./../blocks/section3/gallery002.png' alt='Фото')
+            img(class='section3__photo-children2' src='./../blocks/section3/gallery003.png' alt='Фото')
+            img(class='section3__photo-children3' src='./../blocks/section3/gallery001.png' alt='Фото')
+            img(class='section3__photo-children4' src='./../blocks/section3/gallery004.png' alt='Фото')
+            img(class='section3__photo-children5' src='./../blocks/section3/gallery005.png' alt='Фото')
 
     //-
 
-    div(class='section-trenajor-wrapper') 
-      section(class='section-trenajor') 
-        h1(class='heading heading_size_h1 section-trenajor__heading') Тренажер для обучения письму
-        div(class='section-trenajor__about')
-          p(class='text text_display_block') За 7 дней формируется привычка держать руку и спину правильно, вырабатывается аккуратный почерк, который можно сохранить на всю жизнь
+    div(class='section4-wrapper')
+
+      div(class='section4-header-wrapper') 
+        section(class='section4') 
+          h1(class='heading heading_size_h1 section4__heading') Тренажер для обучения письму
+          div(class='section4__about')
+            p(class='text text_display_block') За 7 дней формируется привычка держать руку и спину правильно, вырабатывается аккуратный почерк, который можно сохранить на всю жизнь
+
+      div(class='section4-pen-wrapper') 
+        img(class='section4__photo-pen' src='./../blocks/section4/pen.png' alt='Pen')
+        div(class='section4__dots')
+          img(class='section4__ellipse' src='./../blocks/section4/ellipse.png' alt='Dot')
+          div(class='section4__dot-box1')
+            img(class='section4__dot1' src='./../blocks/section4/circle.png' alt='Dot')
+            div(class='section4__dot-text') Отсутствие боли в руке
+          div(class='section4__dot-box2')
+            img(class='section4__dot2' src='./../blocks/section4/circle.png' alt='Dot')
+            div(class='section4__dot-text') Отсутствие боли в руке
+          div(class='section4__dot-box3')
+            img(class='section4__dot3' src='./../blocks/section4/circle.png' alt='Dot')
+            div(class='section4__dot-text') Красивый почерк
+          div(class='section4__dot-box4')
+            img(class='section4__dot4' src='./../blocks/section4/btn.png' alt='Dot')
+            img(class='section4__dot-text-handwriting' src='./../blocks/section4/handwriting-trenajer.png' alt='Dot')
 
 
-    div(class='section-trenajor__photo-pen-wrapper') 
-      img(class='section-trenajor__photo-pen' src='./../blocks/section-trenajor/pen.png' alt='Pen')
-      div(class='section-trenajor__dots')
-        img(class='section-trenajor__ellipse' src='./../blocks/section-trenajor/ellipse.png' alt='Dot')
-        div(class='section-trenajor__dot-box1')
-          img(class='section-trenajor__dot1' src='./../blocks/section-trenajor/circle.png' alt='Dot')
-          div(class='section-trenajor__dot-text') Отсутствие боли в руке
-        div(class='section-trenajor__dot-box2')
-          img(class='section-trenajor__dot2' src='./../blocks/section-trenajor/circle.png' alt='Dot')
-          div(class='section-trenajor__dot-text') Отсутствие боли в руке
-        div(class='section-trenajor__dot-box3')
-          img(class='section-trenajor__dot3' src='./../blocks/section-trenajor/circle.png' alt='Dot')
-          div(class='section-trenajor__dot-text') Красивый почерк
-        div(class='section-trenajor__dot-box4')
-          img(class='section-trenajor__dot4' src='./../blocks/section-trenajor/btn.png' alt='Dot')
-          img(class='section-trenajor__dot-text-handwriting' src='./../blocks/section-trenajor/handwriting-trenajer.png' alt='Dot')
-
-
-    div(class='section-trenajor-wrapper') 
-      section(class='section-trenajor section-trenajor_footer') 
-        div(class='section-trenajor__note-box')
-          img(class='section-trenajor__photo section-trenajor__photo_lego-man' src='./../blocks/section-trenajor/lego.png' alt='Lego man')
-          div(class='section-trenajor__note') Имеет все сертификаты качества, изготовлена из безопасного пластика, такого же, из которого созданы игрушки LEGO
+      div(class='section4-header-wrapper') 
+        section(class='section4 section4_footer') 
+          div(class='section4__note-box')
+            img(class='section4__photo section4__photo_lego-man' src='./../blocks/section4/lego.png' alt='Lego man')
+            div(class='section4__note') Имеет все сертификаты качества, изготовлена из безопасного пластика, такого же, из которого созданы игрушки LEGO
 
     //-
 
-    div(class='section-zdorovoe-zrenie-wrapper') 
-      section(class='section-zdorovoe-zrenie') 
-        div(class='section-zdorovoe-zrenie__content')
-          img(class='section-zdorovoe-zrenie__photo section-zdorovoe-zrenie__photo_boy' src='./../blocks/section-zdorovoe-zrenie/boy.png' alt='Boy')
-          article(class='section-zdorovoe-zrenie__text') 
-            h1(class='heading heading_size_h1 section-zdorovoe-zrenie__heading') Здоровое зрение
+    div(class='section5-wrapper') 
+      section(class='section5') 
+        div(class='section5__content')
+          img(class='section5__photo section5__photo_boy' src='./../blocks/section5/boy.png' alt='Boy')
+          article(class='section5__text') 
+            h1(class='heading heading_size_h1 section5__heading') Здоровое зрение
             p(class='text text_display_block') Из-за неправильного положения за партой при письме, неудобного положения руки, многие дети начинают "писать носом", а это рано или поздно приводит к ухудшению зрения. 
             p(class='text text_display_block') При использовании Ypen дети больше не наклоняются близко к тетради, расстояние между глазами и рабочей поверхностью оптимально для сохранения здоровая и хорошего зрения
-            img(class='section-zdorovoe-zrenie__photo section-zdorovoe-zrenie__photo_handwriting' src='./../blocks/section-zdorovoe-zrenie/handwriting.png' alt='Сохранение здоровья зрения')
-            img(class='section-zdorovoe-zrenie-wrapper__dot1' src='./../blocks/section-zdorovoe-zrenie/dot.png')
-            img(class='section-zdorovoe-zrenie-wrapper__dot3' src='./../blocks/section-zdorovoe-zrenie/dot.png')
+            img(class='section5__photo section5__photo_handwriting' src='./../blocks/section5/handwriting.png' alt='Сохранение здоровья зрения')
+            img(class='section5-wrapper__dot1' src='./../blocks/section5/dot.png')
+            img(class='section5-wrapper__dot3' src='./../blocks/section5/dot.png')
 
-      img(class='section-zdorovoe-zrenie-wrapper__dot2' src='./../blocks/section-zdorovoe-zrenie/dot.png')
+      img(class='section5-wrapper__dot2' src='./../blocks/section5/dot.png')
 
     //-
 
-    div(class='section-nagradi-wrapper') 
-      section(class='section-nagradi') 
-        h1(class='heading heading_size_h1 section-nagradi__heading') Совершенствуем ручку 24/7
-        div(class='section-nagradi__about')
+    div(class='section6-wrapper') 
+      section(class='section6') 
+        h1(class='heading heading_size_h1 section6__heading') Совершенствуем ручку 24/7
+        div(class='section6__about')
           p(class='text text_display_block') Придумана, разработана и создана отцом и сыном Пайкачёвыми из города Мурманска
-        div(class='section-nagradi__steps-box')          
-          img(class='section-nagradi__img1' src='./../blocks/section-nagradi/step1.png' alt='Октябрь 2018')
-          img(class='section-nagradi__img2' src='./../blocks/section-nagradi/step2.png' alt='Январь 2018')
-          img(class='section-nagradi__img3' src='./../blocks/section-nagradi/step3.png' alt='Сентябрь 2019')
-          img(class='section-nagradi__line' src='./../blocks/section-nagradi/line.png' alt='Линия')
-          div(class='section-nagradi__october') Октябрь 2018 
-          div(class='section-nagradi__january') Январь 2018 
-          div(class='section-nagradi__september') Сентябрь 2019
+        div(class='section6__steps-box')          
+          img(class='section6__img1' src='./../blocks/section6/step1.png' alt='Октябрь 2018')
+          img(class='section6__img2' src='./../blocks/section6/step2.png' alt='Январь 2018')
+          img(class='section6__img3' src='./../blocks/section6/step3.png' alt='Сентябрь 2019')
+          img(class='section6__line' src='./../blocks/section6/line.png' alt='Линия')
+          div(class='section6__october') Октябрь 2018 
+          div(class='section6__january') Январь 2018 
+          div(class='section6__september') Сентябрь 2019
         
         
-        h1(class='heading heading_size_h1 section-nagradi__heading') Награды и сертификаты
-        div(class='section-nagradi__certificates')
-          div(class='section-nagradi__item')
-            div(class='section-nagradi__circle')
-              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert1.png' alt='Certificate')
-            span(class='section-nagradi__name') Патент «Устройство для письма и рисования»
-          div(class='section-nagradi__item')
-            div(class='section-nagradi__circle')
-              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert2.png' alt='Certificate')
-            span(class='section-nagradi__name') Диплом за 1 место в конкурсе научных и инженерных работ
-          div(class='section-nagradi__item')
-            div(class='section-nagradi__circle')
-              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert3.png' alt='Certificate')
-            span(class='section-nagradi__name') Сертификат на грант
-          div(class='section-nagradi__item')
-            div(class='section-nagradi__circle')
-              img(class='section-nagradi__photo' src='./../blocks/section-nagradi/cert4.png' alt='Certificate')
-            span(class='section-nagradi__name') Диплом «Интеллект будущего»
+        h1(class='heading heading_size_h1 section6__heading') Награды и сертификаты
+        div(class='section6__certificates')
+          div(class='section6__item')
+            div(class='section6__circle')
+              img(class='section6__photo' src='./../blocks/section6/cert1.png' alt='Certificate')
+            span(class='section6__name') Патент «Устройство для письма и рисования»
+          div(class='section6__item')
+            div(class='section6__circle')
+              img(class='section6__photo' src='./../blocks/section6/cert2.png' alt='Certificate')
+            span(class='section6__name') Диплом за 1 место в конкурсе научных и инженерных работ
+          div(class='section6__item')
+            div(class='section6__circle')
+              img(class='section6__photo' src='./../blocks/section6/cert3.png' alt='Certificate')
+            span(class='section6__name') Сертификат на грант
+          div(class='section6__item')
+            div(class='section6__circle')
+              img(class='section6__photo' src='./../blocks/section6/cert4.png' alt='Certificate')
+            span(class='section6__name') Диплом «Интеллект будущего»
 
     //-
 
-    div(class='section-obuchayushiy-vebinar-wrapper') 
-      section(class='section-obuchayushiy-vebinar') 
+    div(class='section7-wrapper') 
+      section(class='section7') 
         h1(class='heading heading_size_h1') Обучающий вебинар для учителей начальных классов и родителей
-        div(class='section-obuchayushiy-vebinar__content')
-          img(class='section-obuchayushiy-vebinar__photo' src='./../blocks/section-obuchayushiy-vebinar/ep-photo.png' alt='Evgeniy Paykachev Photo')
-          article(class='section-obuchayushiy-vebinar__text') 
-            h5(class='heading heading_size_h5 section-obuchayushiy-vebinar__subheading') В вебинаре вы узнаете:
+        div(class='section7__content')
+          img(class='section7__photo' src='./../blocks/section7/ep-photo.png' alt='Evgeniy Paykachev Photo')
+          article(class='section7__text') 
+            h5(class='heading heading_size_h5 section7__subheading') В вебинаре вы узнаете:
             p(class='text text_display_block') #[strong 1.] Устройство Ypen, почему она работает, получите пошаговый план и дорожную карту достижение результата за 7 дней, правила постановки руки для письма. 
             p(class='text text_display_block') #[strong 2.] Как закон Ньютона находит применение в ручке Ypen и чем Ypen отличается от обычной ручки.
             p(class='text text_display_block') #[strong 3.] Правила подготовки рабочей зоны для письма, методику упражнений для расслабления и переноса внимания для детей на уроке.
             p(class='text text_display_block') #[strong 4.] Разбор типичных ошибок положения тела и ручки при письме, способы исправления осанки, расположения кисти.
-            a(class='btn btn_theme_white section-obuchayushiy-vebinar__btn' href='###') Записаться на вебинар
+            a(class='btn btn_theme_white section7__btn' href='###') Записаться на вебинар
 
     //-
 
-    div(class='section-order-wrapper') 
-      section(class='section-order') 
-        header(class='section-order__header')
-          h1(class='heading heading_size_h1 section-order__heading') Выбрать свою Ypen
-          span(class='heading section-order__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
+    div(class='section8-wrapper') 
+      section(class='section8') 
+        header(class='section8__header')
+          h1(class='heading heading_size_h1 section8__heading') Выбрать свою Ypen
+          span(class='heading section8__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
       
-        div(class='section-order__select-pen-box')
-          img(class='section-order__selected-pen-photo' src='./../blocks/section-order/pen1.png' alt='Blue color pen')
-          div(class='section-order__photos-group')
-            img(class='section-order__pen-photo' src='./../blocks/section-order/pen2.png' alt='Red color pen')
-            img(class='section-order__pen-photo' src='./../blocks/section-order/pen3.png' alt='Turquoise color pen')
-            img(class='section-order__pen-photo ' src='./../blocks/section-order/pen4.png' alt='White color pen')
-          div(class='section-order__price-box') 
-            span(class='section-order__price-sum') 
-              span(class='section-order__price-figures') 890
-              span(class='section-order__currency') руб. 
-            span(class='section-order__price-comment') При заказе от 10 штук #[strong цена 800 рублей]
+        div(class='section8__select-pen-box')
+          img(class='section8__selected-pen-photo' src='./../blocks/section8/pen1.png' alt='Blue color pen')
+          div(class='section8__photos-group')
+            img(class='section8__pen-photo' src='./../blocks/section8/pen2.png' alt='Red color pen')
+            img(class='section8__pen-photo' src='./../blocks/section8/pen3.png' alt='Turquoise color pen')
+            img(class='section8__pen-photo ' src='./../blocks/section8/pen4.png' alt='White color pen')
+          div(class='section8__price-box') 
+            span(class='section8__price-sum') 
+              span(class='section8__price-figures') 890
+              span(class='section8__currency') руб. 
+            span(class='section8__price-comment') При заказе от 10 штук #[strong цена 800 рублей]
       
-        div(class='section-order__make-order-box')
-          div(class='section-order__frame')
+        div(class='section8__make-order-box')
+          div(class='section8__frame')
             div(class='form-group')
               label(
                 class='form-group__label'
@@ -198,17 +216,15 @@ block main
                   placeholder='+7 (999) 999-99-99')
                 //-
                   div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-                button(type='button' class='btn btn_theme_yellow section-order_btn') Заказать
+                button(type='button' class='btn btn_theme_yellow section8_btn') Заказать
                 div(class='form-group__privacy-policy') Политика конфиденциальности
 
+    //-
 
-
-  //-
-
-    div(class='section-otzivi-wrapper') 
-      section(class='section-otzivi')
-        h1(class='heading heading_size_h1 section-otzivi__heading') Отзывы
-        div(class='section-otzivi__content')
+    div(class='section9-wrapper') 
+      section(class='section9')
+        h1(class='heading heading_size_h1 section9__heading') Отзывы
+        div(class='section9__content')
           div
             div(class='embed')
               iframe(
@@ -246,16 +262,16 @@ block footer
         div(class='footer__item footer__telephone') +7 921 515 00 04
         div(class='footer__item') Доставка и оплата
     div(class='footer__icons')
-      a(href='https://www.instagram.com/ypen.ru/' class='footer__icon') 
-        img(class='footer__icon' src='./../blocks/icons/instagram.png' alt='instagram icon')
-      a(href='https://vk.com/ypen_ru' class='footer__icon') 
-        img(class='footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
+      a(href='https://www.instagram.com/ypen.ru/' class='icons footer__icon') 
+        img(class='icons__img footer__icon' src='./../blocks/icons/instagram.png' alt='instagram icon')
+      a(href='https://vk.com/ypen_ru' class='icons footer__icon') 
+        img(class='icons__img footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
 
   script.
 
     const sectionOtziviContentEl = 
-      document.querySelector('.section-otzivi__content');
-    const sectionOtziviEl = document.querySelector('.section-otzivi');
+      document.querySelector('.section9__content');
+    const sectionOtziviEl = document.querySelector('.section9');
     
     function makeVideoResponsive(e) {
       let windowWidth = parseInt(document.documentElement.clientWidth);
@@ -268,4 +284,7 @@ block footer
 
     //window.addEventListener('resize', makeVideoResponsive);
     //window.addEventListener('load', makeVideoResponsive);
-    
+
+   // experiments:
+
+

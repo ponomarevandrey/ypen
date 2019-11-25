@@ -1,0 +1,103 @@
+.section1-wrapper {
+  margin: 0 0 3rem 0;
+  background-color: $color_brand_yellow;
+}
+
+.section1 {
+  max-width: 1200px;
+  margin: 1.2rem auto;
+  padding: 0 4vw 4rem 4vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  grid-template-areas:
+    'presentation'
+    'order'
+    'contacts'
+    'video';
+
+  @media screen and (min-width: $screen-md) {
+    grid-template-columns: minmax(300px, 0.5fr) 1fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+      'order    presentation'
+      'contacts video';
+  }
+
+  //-
+
+  &__order {
+    grid-area: order;
+    align-self: center;
+    padding-top: 4rem;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__photo {
+    max-width: 100%;
+  }
+
+  //-
+
+  &__presentation {
+    grid-area: presentation;
+    padding-top: 4rem;
+    justify-self: right;
+  }
+
+  //-
+
+  &__contacts {
+    grid-area: contacts;
+    align-self: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    .section1__photo {
+      padding: 0 0 0 1rem;
+    }
+  }
+
+  //-
+
+  &__video {
+    grid-area: video;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-self: left;
+
+    @media screen and (min-width: $screen-md) {
+      justify-self: right;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: 1fr;
+    }
+
+    .embed {
+      min-width: 150px;
+    }
+  }
+
+  &__video-note-box {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    grid-gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+
+    &:not(:first-child) {
+      padding-left: 1rem;
+    }
+  }
+
+  &__video-note-text {
+    font-size: 0.8rem;
+  }
+}

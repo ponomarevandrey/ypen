@@ -1,9 +1,9 @@
-.section-otzivi-wrapper {
+.section9-wrapper {
   background-color: #fafafa;
   margin: 3rem auto;
 }
 
-.section-otzivi {
+.section9 {
   display: flex;
   flex-flow: column nowrap;
   height: 400px;
@@ -25,7 +25,6 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid red;
     grid-auto-columns: column;
     grid-gap: 3%;
     margin: 2rem 0;

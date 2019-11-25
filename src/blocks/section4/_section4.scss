@@ -1,9 +1,24 @@
-.section-trenajor-wrapper {
+.section4-wrapper {
   margin: 3rem 0 0 0;
   position: relative;
 }
 
-.section-trenajor {
+.section4-pen-wrapper {
+  box-sizing: border-box;
+  max-width: 1500px;
+  display: flex;
+  align-items: flex-end;
+  margin: 10rem auto 0 auto;
+  flex-flow: column nowrap;
+  position: relative;
+  z-index: -1;
+
+  @media screen and (min-width: $screen-lg) {
+    margin: 15rem auto 0 auto;
+  }
+}
+
+.section4 {
   display: flex;
   flex-flow: column nowrap;
   max-width: 1200px;
@@ -25,24 +40,6 @@
 
   //-
 
-  &__map {
-  }
-
-  &__photo-pen-wrapper {
-    box-sizing: border-box;
-    max-width: 1500px;
-    display: flex;
-    align-items: flex-end;
-    margin: 10rem auto 0 auto;
-    flex-flow: column nowrap;
-    position: relative;
-    z-index: -1;
-
-    @media screen and (min-width: $screen-lg) {
-      margin: 15rem auto 0 auto;
-    }
-  }
-
   &__photo-pen {
     max-width: 93%;
   }
@@ -50,15 +47,12 @@
   &__dots {
     max-width: 710px;
     max-height: 637px;
-
     position: absolute;
     top: -100%;
     left: 20%;
     right: 0;
-    //height: 600px;
     width: 45%;
     height: auto;
-
     font-size: 70%;
     font-family: $font-stack_gill-sans;
     color: $color_brand_blue;
@@ -108,17 +102,26 @@
   }
   &__dot-box4 {
     position: absolute;
+    top: 40px;
     right: -70%;
-    bottom: -10%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     max-width: 100%;
 
+    @media screen and (min-width: $screen-sm) {
+      top: 80px;
+      right: -50%;
+    }
+
     @media screen and (min-width: $screen-md) {
-      bottom: 0%;
+      top: 50%;
       right: -40%;
       max-width: 100%;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      top: 60%;
     }
   }
 
@@ -142,9 +145,15 @@
   }
 
   &__dot-text-handwriting {
-    top: -5rem;
-    max-width: 100%;
+    position: absolute;
+    top: 70px;
+    max-width: 70%;
     margin-top: 2rem;
+
+    @media screen and (min-width: $screen-md) {
+      max-width: 100%;
+      top: 90px;
+    }
   }
 
   //-
@@ -176,6 +185,11 @@
   }
 
   &__note {
+    font-size: $font-size_sm;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: $font-size_root;
+    }
   }
 
   &__photo_lego-man {
@@ -185,8 +199,13 @@
   //-
 
   &_footer {
-    margin: 0 auto;
+    margin: 4rem auto 0 auto;
     padding-top: 0;
     padding-bottom: 0;
+
+    @media screen and (min-width: $screen-md) {
+      margin: 0 auto;
+      font-size: $font-size_root;
+    }
   }
 }

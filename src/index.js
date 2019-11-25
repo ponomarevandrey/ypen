@@ -7,7 +7,7 @@ import './blocks/_reset.scss';
  * BLOCKS *
  **********/
 
-/***************** Redefinition level 'blocks.biscuit-lib' *******************/
+/***************** Parent blocks *******************/
 
 import './blocks/text/_text.scss';
 
@@ -27,7 +27,7 @@ import './blocks/select/_select.scss';
 
 import './blocks/embed/_embed.scss';
 
-/***************** Redefinition level 'blocks' *******************/
+/***************** Child blocks *******************/
 
 import './blocks/page/_page.scss';
 // import './blocks/page/page.js';
@@ -36,24 +36,26 @@ import './blocks/grid-page-layout1/_grid-page-layout1.scss';
 
 import './blocks/grid-page-layout2/_grid-page-layout2.scss';
 
-import './blocks/main/_main.scss';
+import './blocks/icons/_icons.scss';
 
 import './blocks/footer/_footer.scss';
 
 import './blocks/logo/_logo.scss';
 
-import './blocks/section-otzivi/_section-otzivi.scss';
+import './blocks/section9/_section9.scss';
 
-import './blocks/section-order/_section-order.scss';
+import './blocks/section8/_section8.scss';
 
-import './blocks/section-obuchayushiy-vebinar/_section-obuchayushiy-vebinar.scss';
+import './blocks/section7/_section7.scss';
 
-import './blocks/section-nagradi/_section-nagradi.scss';
+import './blocks/section6/_section6.scss';
 
-import './blocks/section-zdorovoe-zrenie/_section-zdorovoe-zrenie.scss';
+import './blocks/section5/_section5.scss';
 
-import './blocks/section-trenajor/_section-trenajor.scss';
+import './blocks/section4/_section4.scss';
 
-import './blocks/section-pravilnaya-osanka/_section-pravilnaya-osanka.scss';
+import './blocks/section3/_section3.scss';
 
-import './blocks/section-pismo-bez/_section-pismo-bez.scss';
+import './blocks/section2/_section2.scss';
+
+import './blocks/section1/_section1.scss';
