@@ -16,8 +16,12 @@
     font-family: $font-stack_open-sans;
   }
 
-  // Fix Chrome transition bug (see readme file)
-  &__preload * {
+  /*
+   * Fix Chrome transition bug (see readme file)
+  */
+  /*
+   &__preload * {
     transition: none !important;
   }
+  */
 }

@@ -2,7 +2,6 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PrettierPlugin = require('prettier-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -173,8 +172,6 @@ module.exports = (env, options) => {
     },
 
     plugins: [
-      new CleanWebpackPlugin(),
-
       // index page
       new HtmlWebpackPlugin({
         inject: true,

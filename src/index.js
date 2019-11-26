@@ -30,7 +30,6 @@ import './blocks/embed/_embed.scss';
 /***************** Child blocks *******************/
 
 import './blocks/page/_page.scss';
-// import './blocks/page/page.js';
 
 import './blocks/grid-page-layout1/_grid-page-layout1.scss';
 
@@ -59,3 +58,6 @@ import './blocks/section3/_section3.scss';
 import './blocks/section2/_section2.scss';
 
 import './blocks/section1/_section1.scss';
+
+import './blocks/modal/_modal.scss';
+import './blocks/modal/modal.js';

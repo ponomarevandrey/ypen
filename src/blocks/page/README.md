@@ -8,4 +8,6 @@ html(lang='en' class='page')
 
 # Notes
 
-Whenever you don’t have any `<script></script>` tags on the page, Google Chrome fires CSS-`transition` on page load. To fix this add `&__preload` class to all descendants of `<body>`. After full page loading, we remove this class with the help of a small script `page.js`
+Whenever you don’t have any `<script></script>` tags on the page, Google Chrome fires CSS-`transition` on page load. To fix this:
+  - add `&__preload` class to all descendants of `<body>`. After full page loading, we remove this class with the help of a small script `page.js`
+  - in _page.scss uncomment `&__preload * { ...`

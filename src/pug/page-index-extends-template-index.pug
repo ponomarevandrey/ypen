@@ -219,7 +219,7 @@ block main
                 button(type='button' class='btn btn_theme_yellow section8_btn') Заказать
                 div(class='form-group__privacy-policy') Политика конфиденциальности
 
-    //-
+  //-
 
     div(class='section9-wrapper') 
       section(class='section9')
@@ -267,24 +267,62 @@ block footer
       a(href='https://vk.com/ypen_ru' class='icons footer__icon') 
         img(class='icons__img footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
 
-  script.
 
-    const sectionOtziviContentEl = 
-      document.querySelector('.section9__content');
-    const sectionOtziviEl = document.querySelector('.section9');
-    
-    function makeVideoResponsive(e) {
-      let windowWidth = parseInt(document.documentElement.clientWidth);
-      if (windowWidth < 480) {
-        sectionOtziviEl.style.height = `${parseInt(getComputedStyle(sectionOtziviContentEl).height) + 250}px`;
-      } else {
-        sectionOtziviEl.style.height = `${parseInt(getComputedStyle(sectionOtziviContentEl).height) + 200}px`;
-      }
-    }
+  button(data-modal='modal-order') Order a pen
+  button(data-modal='modal-webinar-sign-up') Webinar sign up
+  button(data-modal='modal-video') Video
 
-    //window.addEventListener('resize', makeVideoResponsive);
-    //window.addEventListener('load', makeVideoResponsive);
+  div(class='modal')
+    span(class='modal__close-btn') &times;
 
-   // experiments:
+    div(class='modal__content' id='modal-order')
+      div(class='form-group')
+        label(class='form-group__label' for='name') 
+          span(class='form-group__heading') Оставьте заявку
+          span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
+        div(class='form-group__container')
+          input(
+            class='form-group__input'
+            type='text'
+            id='name'
+            name='name'
+            placeholder='Ваше имя')
+          //-
+            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum
+          input(
+            class='form-group__input'
+            type='text'
+            id='tel'
+            name='tel'
+            placeholder='+7 (999) 999-99-99')
+          //-
+            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
+          button(type='button' class='btn btn_theme_yellow section8_btn') Записаться на вебинар
 
+    div(class='modal__content modal__content_video' id='modal-video')
+      div(class='embed')
+        iframe(class='section1__video-preview' src="https://www.youtube.com/embed/1N2vRznEQQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
+    div(class='modal__content' id='modal-webinar-sign-up')
+      div(class='form-group')
+        label(class='form-group__label' for='name') 
+          span(class='form-group__heading') Оставьте заявку
+          span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
+        div(class='form-group__container')
+          input(
+            class='form-group__input'
+            type='text'
+            id='name'
+            name='name'
+            placeholder='Ваше имя')
+          //-
+            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum
+          input(
+            class='form-group__input'
+            type='text'
+            id='tel'
+            name='tel'
+            placeholder='+7 (999) 999-99-99')
+          //-
+            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
+          button(type='button' class='btn btn_theme_yellow section8_btn') Записаться на вебинар
