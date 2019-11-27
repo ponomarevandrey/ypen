@@ -19,7 +19,7 @@ block main
         div(class='section1__order')
           img(class='section1__photo' src='./../blocks/section1/handwriting-pocherk.png' alt='Почерк')
           h1(class='heading heading_size_h1 section1__heading') Без усталости за 7 дней
-          button(type='button' class='btn btn_theme_white section8_btn') Заказать
+          button(class='btn btn_theme_white section8_btn' data-modal='modal-order' type='button') Заказать
         div(class='section1__presentation section1_align_r')
           img(class='section1__photo' src='./../blocks/section1/pen-presentation.png' alt='Pen')
         div(class='section1__contacts')
@@ -32,8 +32,7 @@ block main
           div(class='section1__video-note-box')
             img(class='section1__flag' src='./../blocks/section1/flag.png' alt='Почерк')
             span(class='section1__video-note-text') Придумана и производится в России вручную
-          div(class='embed')
-            iframe(class='section1__video-preview' src="https://www.youtube.com/embed/1N2vRznEQQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          img(class='section1__photo section1__photo_video-preview' data-modal='modal-video' src='./../blocks/section1/preview.jpg' alt='video preview')
           
     //-
 
@@ -41,7 +40,7 @@ block main
       section(class='section2') 
         article(class='section2__text') 
           h1(class='heading heading_size_h1 section2__heading') Письмо без боли, синяков и усталости
-          p(class='text text_display_block') За счет физиологичной формы #[string Ypen можно держать только правильно и никак иначе]. За счет правильного упора во время письма перераспределяется нагрузка с пальцев на ладонь и снимается усталость.
+          p(class='text text_display_block') За счет физиологичной формы #[strong Ypen можно держать только правильно и никак иначе]. За счет правильного упора во время письма перераспределяется нагрузка с пальцев на ладонь и снимается усталость.
           p(class='text text_display_block') #[strong Ypen подходит для левшей и правшей], для школьников и тех, кто только собирается им стать.
           p(class='text text_display_block') Ypen — отличный инструмент для #[strong подготовки ребенка к школе] и для обучения в начальных классах.
         img(class='section2__photo' src='./../blocks/section2/hand.png' alt='Hand')
@@ -169,7 +168,7 @@ block main
             p(class='text text_display_block') #[strong 2.] Как закон Ньютона находит применение в ручке Ypen и чем Ypen отличается от обычной ручки.
             p(class='text text_display_block') #[strong 3.] Правила подготовки рабочей зоны для письма, методику упражнений для расслабления и переноса внимания для детей на уроке.
             p(class='text text_display_block') #[strong 4.] Разбор типичных ошибок положения тела и ручки при письме, способы исправления осанки, расположения кисти.
-            a(class='btn btn_theme_white section7__btn' href='###') Записаться на вебинар
+            a(class='btn btn_theme_white section7__btn' href='###' data-modal='modal-webinar-sign-up') Записаться на вебинар
 
     //-
 
@@ -267,15 +266,10 @@ block footer
       a(href='https://vk.com/ypen_ru' class='icons footer__icon') 
         img(class='icons__img footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
 
+  div(class='modal-overlay')
+    span(class='modal-overlay__close-btn') &times;
 
-  button(data-modal='modal-order') Order a pen
-  button(data-modal='modal-webinar-sign-up') Webinar sign up
-  button(data-modal='modal-video') Video
-
-  div(class='modal')
-    span(class='modal__close-btn') &times;
-
-    div(class='modal__content' id='modal-order')
+    div(class='modal-overlay__window' id='modal-order')
       div(class='form-group')
         label(class='form-group__label' for='name') 
           span(class='form-group__heading') Оставьте заявку
@@ -297,13 +291,13 @@ block footer
             placeholder='+7 (999) 999-99-99')
           //-
             div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-          button(type='button' class='btn btn_theme_yellow section8_btn') Записаться на вебинар
+          button(type='button' class='btn btn_theme_yellow section8_btn') Заказать
 
-    div(class='modal__content modal__content_video' id='modal-video')
+    div(class='modal-overlay__window modal-overlay__window_video' id='modal-video')
       div(class='embed')
         iframe(class='section1__video-preview' src="https://www.youtube.com/embed/1N2vRznEQQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
-    div(class='modal__content' id='modal-webinar-sign-up')
+    div(class='modal-overlay__window' id='modal-webinar-sign-up')
       div(class='form-group')
         label(class='form-group__label' for='name') 
           span(class='form-group__heading') Оставьте заявку

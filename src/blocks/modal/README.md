@@ -1,14 +1,55 @@
 # How to use
 
+pug:
 ```pug
-  //- button(class='trigger') Click here to trigger the modal
 
-  div(class='modal')
-    span(class='modal__close-btn') &times;
+  button(data-modal='modal-order') Order a pen
+  button(data-modal='modal-webinar-sign-up') Webinar sign up
+  button(data-modal='modal-video') Video
 
-    div(id='modal-order' class='modal__content')
+  div(class='modal-overlay')
+    span(class='modal-overlay__close-btn') &times;
+
+    div(class='modal-overlay__window' id='modal-order')
       //- modal content
 
+    div(class='modal-overlay__window modal-overlay__window_video' id='modal-video')
+      //- modal content
+
+    div(class='modal-overlay__window' id='modal-webinar-sign-up')
+      //- modal content
 ```
 
-`id='modal-order'` is just an example, you can assign any id you like, as long as it is unique. Ids are for JavaScript only, SCSS doesn't rely on them
+js (in webpack entry point, `index.js`):
+```javascript
+import './blocks/modal/_modal.scss';
+import './blocks/modal/modal.js';
+import { config as modalConfig, Modal } from './blocks/modal/modal.js';
+new Modal(modalConfig);
+```
+
+- button's `id` and modal window's `data-modal` attributes should always be assigned the same value:
+  ```pug
+  button(data-modal='modal-[your modal window name]') Button text
+  ...
+         div(... id='modal-[your modal window name]')
+  ```
+
+# Config
+
+If you change class names in HTML, you also have to change values in configuration object:
+
+```pug
+const config = {
+  /* all class names used in HTML related to modal window component: */
+  classes: {
+    overlay: 'modal-overlay',
+    overlayStateModifier: 'modal-overlay_visible',
+    modalStateModifier: 'modal-overlay__window_visible',
+    closeBtn: 'modal-overlay__close-btn',
+    video: 'embed',
+  },
+  /* clicking elements having this data-attribute will trigger a modal window: */
+  trigger: 'data-modal'
+};
+```

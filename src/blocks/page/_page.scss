@@ -19,9 +19,8 @@
   /*
    * Fix Chrome transition bug (see readme file)
   */
-  /*
-   &__preload * {
+
+  &__preload * {
     transition: none !important;
   }
-  */
 }

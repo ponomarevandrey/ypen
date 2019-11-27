@@ -61,3 +61,8 @@ import './blocks/section1/_section1.scss';
 
 import './blocks/modal/_modal.scss';
 import './blocks/modal/modal.js';
+import { config as modalConfig, Modal } from './blocks/modal/modal.js';
+new Modal(modalConfig);
+
+import './blocks/page/_page.scss';
+import './blocks/page/page.js';

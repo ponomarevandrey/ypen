@@ -39,6 +39,19 @@
 
   &__photo {
     max-width: 100%;
+
+    &_video-preview {
+      max-width: 100%;
+      cursor: pointer;
+
+      @media screen and (min-width: $screen-md) {
+        max-width: 150px;
+      }
+    }
+
+    &_video-preview:hover {
+      opacity: 0.8;
+    }
   }
 
   //-
