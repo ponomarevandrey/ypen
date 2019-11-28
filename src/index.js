@@ -54,7 +54,7 @@ import './blocks/webinars/_webinars.scss';
 import './blocks/section8/_section8.scss';
 
 import './blocks/reviews/_reviews.scss';
-// import './blocks/reviews/reviews.js';
+import './blocks/reviews/reviews.js';
 
 import './blocks/footer/_footer.scss';
 
