@@ -7,6 +7,9 @@ import './blocks/_reset.scss';
  * BLOCKS *
  **********/
 
+import './blocks/page/_page.scss';
+import './blocks/page/page.js';
+
 import './blocks/text/_text.scss';
 
 import './blocks/heading/_heading.scss';
@@ -22,12 +25,6 @@ import './blocks/form-group/_form-group.scss';
 import './blocks/select/_select.scss';
 
 import './blocks/embed/_embed.scss';
-
-import './blocks/page/_page.scss';
-
-//import './blocks/grid-page-layout1/_grid-page-layout1.scss';
-
-//import './blocks/grid-page-layout2/_grid-page-layout2.scss';
 
 import './blocks/icons/_icons.scss';
 
@@ -54,13 +51,10 @@ import './blocks/webinars/_webinars.scss';
 import './blocks/section8/_section8.scss';
 
 import './blocks/reviews/_reviews.scss';
-import './blocks/reviews/reviews.js';
+// import './blocks/reviews/reviews.js';
 
 import './blocks/footer/_footer.scss';
 
 import './blocks/modal/_modal.scss';
 import { Modal } from './blocks/modal/modal.js';
 new Modal();
-
-import './blocks/page/_page.scss';
-import './blocks/page/page.js';

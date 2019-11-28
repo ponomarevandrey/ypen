@@ -1,5 +1,5 @@
-class Modal {
-  constructor(config = Modal.config) {
+class Lightbox {
+  constructor(config = Lightbox.config) {
     this._config = config;
 
     this._backdrop = document.querySelector(
@@ -82,4 +82,4 @@ class Modal {
   };
 }
 
-export { Modal };
+export { Lightbox };

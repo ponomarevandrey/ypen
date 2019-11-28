@@ -10,18 +10,44 @@ class Modal {
     );
 
     document.addEventListener('click', e => this.handleClick(e));
+    document.addEventListener('keydown', e => this.handleKeyDown(e));
   }
 
-  displayModal(dialog) {
+  handleClick(e) {
+    const clickedEl = e.target;
+
+    if (clickedEl === this._backdrop || clickedEl === this._closeBtn) {
+      this.closeModal();
+    }
+
+    if (clickedEl.dataset.modal) {
+      e.preventDefault();
+      this.openModal(clickedEl);
+    }
+  }
+
+  handleKeyDown(e) {
+    if (this._openedDialog && e.code === 'Escape') {
+      const videoInModal = this._openedDialog.querySelector(
+        `.${this._config.classes.video}`
+      );
+      if (videoInModal) this.stopVideo(videoInModal);
+      this.toggleBackdrop();
+      delete this._openedDialog;
+      document.body.style.overflow = '';
+      return;
+    }
+  }
+
+  displayDialog(dialog) {
     dialog.classList.add(this._config.classes.dialogStateModifier);
-    this._openedModal = dialog;
   }
 
-  hideModal(dialog) {
+  hideDialog(dialog) {
     dialog.classList.remove(this._config.classes.dialogStateModifier);
   }
 
-  toggleOverlay() {
+  toggleBackdrop() {
     this._backdrop.classList.toggle(this._config.classes.backdropStateModifier);
   }
 
@@ -39,35 +65,29 @@ class Modal {
     if (video) video.pause();
   }
 
-  handleClick(e) {
-    const clickedEl = e.target;
+  openModal(clickedEl) {
+    const newDialog = document.querySelector(`#${clickedEl.dataset.modal}`);
+    const visibleDialog = document.querySelector(
+      `.${this._config.classes.dialogStateModifier}`
+    );
 
-    if (clickedEl === this._backdrop || clickedEl === this._closeBtn) {
-      const videoInModal = this._openedModal.querySelector(
-        `.${this._config.classes.video}`
-      );
-      if (videoInModal) this.stopVideo(videoInModal);
-      this.toggleOverlay();
-      delete this._openedModal;
-      document.body.style.overflow = '';
-      return;
-    }
+    this.toggleBackdrop();
 
-    if (clickedEl.dataset.modal) {
-      e.preventDefault();
+    if (visibleDialog) this.hideDialog(visibleDialog);
+    this.displayDialog(newDialog);
+    this._openedDialog = newDialog;
+    document.body.style.overflow = 'hidden';
+  }
 
-      const currentDialog = document.querySelector(
-        `#${clickedEl.dataset.modal}`
-      );
-      this.toggleOverlay();
-
-      const visibleModal = document.querySelector(
-        `.${this._config.classes.dialogStateModifier}`
-      );
-      if (visibleModal) this.hideModal(visibleModal);
-      this.displayModal(currentDialog);
-      document.body.style.overflow = 'hidden';
-    }
+  closeModal() {
+    const videoBlock = this._openedDialog.querySelector(
+      `.${this._config.classes.video}`
+    );
+    if (videoBlock) this.stopVideo(videoBlock);
+    this.toggleBackdrop();
+    delete this._openedDialog;
+    document.body.style.overflow = '';
+    return;
   }
 
   static config = {
