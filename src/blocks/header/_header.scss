@@ -15,12 +15,33 @@
     font-family: $font-stack_open-sans;
     font-weight: bold;
     font-size: $font-size_xs;
-    margin: 0 0 0 2rem;
+    margin-left: 2rem;
   }
 
-  &__item {
-    display: inline-block;
-    margin: 0 0 0 4rem;
+  &__link {
+    margin: 0 2rem;
     white-space: nowrap;
+    text-decoration: none;
+
+    &:link {
+      color: $color_black;
+      transition: all 0.2s linear;
+    }
+
+    &:visited {
+      color: $color_black;
+    }
+
+    &:hover {
+      color: lighten($color_gray-dark, 15%);
+    }
+
+    &:focus {
+      color: lighten($color_link, 15%);
+    }
+
+    &:active {
+      color: lighten($color_link, 15%);
+    }
   }
 }
