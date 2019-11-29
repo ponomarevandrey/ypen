@@ -37,45 +37,45 @@
 
   ```pug
   fieldset(class='form-group-wrapper')
-  div(class='form-group form-group_row')
-    legend(class='form-group__label') First name
+    div(class='form-group form-group_row')
+      legend(class='form-group__label') First name
 
-    div
-      div(class='form-group__container control')
-        input(
-          class='control__system-control'
-          id='f1'
-          type='radio'
-          value='1'
-          name='group1')
-        label(
-          class='control__label control__label_radio'
-          for='f1') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting !!!
-        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+      div
+        div(class='form-group__container control')
+          input(
+            class='control__system-control'
+            id='f1'
+            type='radio'
+            value='1'
+            name='group1')
+          label(
+            class='control__label control__label_radio'
+            for='f1') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting !!!
+          div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
 
-      div(class='form-group__container control')
-        input(
-          class='control__system-control'
-          id='f2'
-          type='radio'
-          value='2'
-          name='group1')
-        label(
-          class='control__label control__label_radio'
-          for='f2') Milk
-        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting
+        div(class='form-group__container control')
+          input(
+            class='control__system-control'
+            id='f2'
+            type='radio'
+            value='2'
+            name='group1')
+          label(
+            class='control__label control__label_radio'
+            for='f2') Milk
+          div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting
 
-      div(class='form-group__container control')
-        input(
-          class='control__system-control'
-          id='f3'
-          type='radio'
-          value='3'
-          name='group1')
-        label(
-          class='control__label control__label_radio'
-          for='f3') Milk
-        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+        div(class='form-group__container control')
+          input(
+            class='control__system-control'
+            id='f3'
+            type='radio'
+            value='3'
+            name='group1')
+          label(
+            class='control__label control__label_radio'
+            for='f3') Milk
+          div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
   ```
 
 # Notes

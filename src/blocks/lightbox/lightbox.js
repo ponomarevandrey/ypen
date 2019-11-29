@@ -1,3 +1,5 @@
+import { throwStatement } from 'babel-types';
+
 class Lightbox {
   constructor(config = Lightbox.config) {
     this._config = config;
@@ -9,74 +11,101 @@ class Lightbox {
       `.${this._config.classes.closeBtn}`
     );
 
-    document.addEventListener('click', e => this.handleClick(e));
+    this._slides = document.querySelectorAll('.lightbox__dialog');
+    this._counter = 0;
+    this._amount = this._slides.length;
+
+    const prevBtn = document.querySelector(`#${this._config.classes.prevBtn}`);
+    const nextBtn = document.querySelector(`#${this._config.classes.nextBtn}`);
+    prevBtn.addEventListener('click', e => this.navigate(e, -1));
+    nextBtn.addEventListener('click', e => this.navigate(e, 1));
+
+    document.addEventListener('click', e => this.onClick(e));
+    document.addEventListener('keydown', e => this.onKeydown(e));
   }
 
-  displayModal(dialog) {
-    dialog.classList.add(this._config.classes.dialogStateModifier);
-    this._openedModal = dialog;
+  getElemIndex(elem) {
+    if (elem.dataset.lightbox) return elem.dataset.lightbox.match(/\d/)[0];
   }
 
-  hideModal(dialog) {
-    dialog.classList.remove(this._config.classes.dialogStateModifier);
+  navigate(e, direction) {
+    this.hideDialog(this._current);
+
+    this._counter = this._counter + direction;
+
+    if (direction === -1 && this._counter < 0) this._counter = this._amount - 1;
+    if (direction === 1 && !this._slides[this._counter]) this._counter = 0;
+
+    this._current = this._slides[this._counter];
+    this.showDialog(this._current);
   }
 
-  toggleOverlay() {
-    this._backdrop.classList.toggle(this._config.classes.backdropStateModifier);
+  openLightbox(clickedEl) {
+    const newDialog = document.querySelector(`#${clickedEl.dataset.lightbox}`);
+    const visibleDialog = document.querySelector(
+      `.${this._config.classes.dialogStateModifier}`
+    );
+
+    this.toggleBackdrop();
+    if (visibleDialog) this.hideDialog(visibleDialog);
+
+    this.showDialog(newDialog);
+    this._openedDialog = newDialog;
+    document.body.style.overflow = 'hidden';
   }
 
-  stopVideo(element) {
-    /* Stop an iframe or HTML5 <video> from playing.
-     param { element} - the element that contains the video */
-    const iframe = element.querySelector('iframe');
-    const video = element.querySelector('video');
-
-    if (iframe) {
-      const iframeSrc = iframe.src;
-      iframe.src = iframeSrc;
-    }
-
-    if (video) video.pause();
+  closeLightbox() {
+    this.toggleBackdrop();
+    delete this._openedDialog;
+    document.body.style.overflow = '';
+    return;
   }
 
-  handleClick(e) {
+  onClick(e) {
     const clickedEl = e.target;
 
     if (clickedEl === this._backdrop || clickedEl === this._closeBtn) {
-      const videoInModal = this._openedModal.querySelector(
-        `.${this._config.classes.video}`
-      );
-      if (videoInModal) this.stopVideo(videoInModal);
-      this.toggleOverlay();
-      delete this._openedModal;
-      document.body.style.overflow = '';
-      return;
+      this.closeLightbox();
     }
 
-    if (clickedEl.dataset.modal) {
+    if (clickedEl.dataset.lightbox) {
       e.preventDefault();
-
-      const currentDialog = document.querySelector(
-        `#${clickedEl.dataset.modal}`
-      );
-      this.toggleOverlay();
-
-      const visibleModal = document.querySelector(
-        `.${this._config.classes.dialogStateModifier}`
-      );
-      if (visibleModal) this.hideModal(visibleModal);
-      this.displayModal(currentDialog);
-      document.body.style.overflow = 'hidden';
+      this._counter = Number(this.getElemIndex(clickedEl));
+      this._current = this._slides[this._counter];
+      this.openLightbox(clickedEl);
     }
   }
 
+  onKeydown(e) {
+    if (this._openedDialog && e.code === 'Escape') {
+      this.toggleBackdrop();
+      delete this._openedDialog;
+      document.body.style.overflow = '';
+      return;
+    }
+  }
+
+  showDialog(dialog) {
+    dialog.classList.add(this._config.classes.dialogStateModifier);
+  }
+
+  hideDialog(dialog) {
+    dialog.classList.remove(this._config.classes.dialogStateModifier);
+  }
+
+  toggleBackdrop() {
+    this._backdrop.classList.toggle(this._config.classes.backdropStateModifier);
+  }
+
   static config = {
-    /* all class names used in HTML related to modal window component: */
+    // all class names used in HTML related to Lightbox window component:
     classes: {
-      backdrop: 'modal',
-      backdropStateModifier: 'modal_visible',
-      dialogStateModifier: 'modal__dialog_visible',
-      closeBtn: 'modal__close-btn',
+      backdrop: 'lightbox',
+      backdropStateModifier: 'lightbox_visible',
+      dialogStateModifier: 'lightbox__dialog_visible',
+      closeBtn: 'lightbox__close-btn',
+      prevBtn: 'lightbox-btn-prev',
+      nextBtn: 'lightbox-btn-next',
       video: 'embed',
     },
   };

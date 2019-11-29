@@ -9,11 +9,11 @@ class Modal {
       `.${this._config.classes.closeBtn}`
     );
 
-    document.addEventListener('click', e => this.handleClick(e));
-    document.addEventListener('keydown', e => this.handleKeyDown(e));
+    document.addEventListener('click', e => this.onClick(e));
+    document.addEventListener('keydown', e => this.onKeydown(e));
   }
 
-  handleClick(e) {
+  onClick(e) {
     const clickedEl = e.target;
 
     if (clickedEl === this._backdrop || clickedEl === this._closeBtn) {
@@ -26,7 +26,7 @@ class Modal {
     }
   }
 
-  handleKeyDown(e) {
+  onKeydown(e) {
     if (this._openedDialog && e.code === 'Escape') {
       const videoInModal = this._openedDialog.querySelector(
         `.${this._config.classes.video}`
@@ -39,7 +39,7 @@ class Modal {
     }
   }
 
-  displayDialog(dialog) {
+  showDialog(dialog) {
     dialog.classList.add(this._config.classes.dialogStateModifier);
   }
 
@@ -74,7 +74,7 @@ class Modal {
     this.toggleBackdrop();
 
     if (visibleDialog) this.hideDialog(visibleDialog);
-    this.displayDialog(newDialog);
+    this.showDialog(newDialog);
     this._openedDialog = newDialog;
     document.body.style.overflow = 'hidden';
   }

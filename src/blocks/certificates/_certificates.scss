@@ -101,7 +101,7 @@
 
   //-
 
-  &__certificates {
+  &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     grid-gap: 3rem;
@@ -135,10 +135,11 @@
     border-radius: 1000px;
   }
 
-  &__photo {
+  &__thumbnail {
     position: relative;
     top: -28px;
     margin: 0 auto;
+    cursor: pointer;
   }
 
   &__name {

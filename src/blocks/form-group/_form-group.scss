@@ -19,7 +19,8 @@
   &__container {
     position: relative;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
+    padding-bottom: 1rem;
   }
 
   &__label {
@@ -44,10 +45,10 @@
   &__input {
     width: 100%;
     height: calc(2rem + 2px);
-    padding: 2rem;
+    padding: 1.5rem;
     border: 1px solid transparent;
     resize: vertical;
-    background-color: #f8f8f8;
+    background-color: $color_gray-lightest;
     font-family: $font-stack_open-sans;
     font-size: 1rem;
     line-height: 1.5;
@@ -95,6 +96,9 @@
 
   &__tip {
     padding-top: 0.4rem;
+
+    color: $color_gray-light;
+    font-size: 80%;
   }
 
   // Modifiers:

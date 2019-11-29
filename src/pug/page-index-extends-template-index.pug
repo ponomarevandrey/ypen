@@ -139,26 +139,26 @@ block main
   div(class='certificates-wrapper' id='certificates') 
     section(class='certificates') 
       h1(class='heading heading_size_h1 certificates__heading') Награды и сертификаты
-      div(class='certificates__certificates')
+      div(class='certificates__list')
 
         div(class='certificates__item')
           div(class='certificates__circle')
-            img(class='certificates__photo' data-lightbox='lightbox-image' src='./../blocks/certificates/cert1.png' alt='патент')
+            img(class='certificates__thumbnail' data-lightbox='lightbox-image0' src='./../blocks/certificates/thumbnail-cert1.png' alt='патент')
           span(class='certificates__name') Патент «Устройство для письма и рисования»
 
         div(class='certificates__item')
           div(class='certificates__circle')
-            img(class='certificates__photo' src='./../blocks/certificates/cert2.png' alt='диплом')
+            img(class='certificates__thumbnail' data-lightbox='lightbox-image1' src='./../blocks/certificates/thumbnail-cert2.png' alt='диплом')
           span(class='certificates__name') Диплом за 1 место в конкурсе научных и инженерных работ
 
         div(class='certificates__item')
-          div(class='certificates__circle')
-            img(class='certificates__photo' src='./../blocks/certificates/cert3.png' alt='сертификат')
+          div(class='certificates__circle lightbox__img')
+            img(class='certificates__thumbnail' data-lightbox='lightbox-image2' src='./../blocks/certificates/thumbnail-cert3.png' alt='сертификат')
           span(class='certificates__name') Сертификат на грант
 
         div(class='certificates__item')
-          div(class='certificates__circle')
-            img(class='certificates__photo' src='./../blocks/certificates/cert4.png' alt='диплом')
+          div(class='certificates__circle lightbox__img')
+            img(class='certificates__thumbnail' data-lightbox='lightbox-image3' src='./../blocks/certificates/thumbnail-cert4.png' alt='диплом')
           span(class='certificates__name') Диплом «Интеллект будущего»
 
   //-
@@ -224,7 +224,6 @@ block main
               button(type='button' class='btn btn_theme_yellow section8_btn') Заказать
               div(class='form-group__privacy-policy') Политика конфиденциальности
 
-
   //-
   div(class='reviews-wrapper' id='reviews') 
     section(class='reviews')
@@ -283,57 +282,95 @@ block main
       a(href='https://vk.com/ypen_ru' class='icons footer__icon') 
         img(class='icons__img footer__icon' src='./../blocks/icons/vk.png' alt='vk icon')
 
+  //-
+
   div(class='modal')
     span(class='modal__close-btn') &times;
-
-    div(class='modal__dialog' id='modal-order')
-      div(class='form-group')
-        label(class='form-group__label' for='name') 
-          span(class='form-group__heading') Оставьте заявку
-          span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
-        div(class='form-group__container')
-          input(
-            class='form-group__input'
-            type='text'
-            id='name'
-            name='name'
-            placeholder='Ваше имя')
-          //-
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum
-          input(
-            class='form-group__input'
-            type='text'
-            id='tel'
-            name='tel'
-            placeholder='+7 (999) 999-99-99')
-          //-
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-          button(type='button' class='btn btn_theme_yellow section8_btn') Заказать
 
     div(class='modal__dialog modal__dialog_video' id='modal-video')
       div(class='embed')
         iframe(class='main__video-preview' src="https://www.youtube.com/embed/1N2vRznEQQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
     div(class='modal__dialog' id='modal-webinar-sign-up')
-      div(class='form-group')
-        label(class='form-group__label' for='name') 
-          span(class='form-group__heading') Оставьте заявку
-          span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
-        div(class='form-group__container')
-          input(
-            class='form-group__input'
-            type='text'
-            id='name'
-            name='name'
-            placeholder='Ваше имя')
-          //-
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum
-          input(
-            class='form-group__input'
-            type='text'
-            id='tel'
-            name='tel'
-            placeholder='+7 (999) 999-99-99')
-          //-
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-          button(type='button' class='btn btn_theme_yellow section8_btn') Записаться на вебинар
+
+      fieldset(class='form-group-wrapper')
+        div(class='form-group')
+          legend(class='form-group__label') 
+            span(class='form-group__heading') Оставьте заявку
+            span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
+
+          div
+            div(class='form-group__container')
+              //-
+                label(
+                  class='form-group__label'
+                  for='f1') Имя:
+              input(
+                class='form-group__input'
+                type='text'
+                id='webinar-sign-up-name'
+                name='webinar-sign-up-name'
+                placeholder='Имя покупателя')
+              //-
+                div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum 
+
+            div(class='form-group__container')
+              //-
+                label(
+                  class='form-group__label'
+                  for='name') A long sentence you're forced to 
+              input(
+                class='form-group__input'
+                type='text'
+                id='webinar-sign-up-email'
+                name='webinar-sign-up-email'
+                placeholder='E-mail покупателя')
+              //-
+                div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Tip text
+
+            div(class='form-group__container')
+              //-
+                label(
+                  class='form-group__label'
+                  for='name') Телефон:
+              input(
+                class='form-group__input'
+                type='text'
+                id='webinar-sign-up-tel'
+                name='webinar-sign-up-tel'
+                placeholder='Телефон')
+              //-
+                div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
+
+            div(class='form-group__container')
+              button(type='button' class='btn btn_theme_yellow section8_btn') Записаться на вебинар
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //-
+
+  div(class='lightbox')
+    span(class='lightbox__close-btn') &times;
+
+    img(class='lightbox__dialog' id='lightbox-image0' src='./../blocks/certificates/cert1.jpg' alt='диплом')
+
+    img(class='lightbox__dialog' id='lightbox-image1' src='./../blocks/certificates/cert2.jpg' alt='диплом')
+
+    img(class='lightbox__dialog' id='lightbox-image2'  src='./../blocks/certificates/cert3.jpg' alt='сертификат')
+
+    img(class='lightbox__dialog' id='lightbox-image3'  src='./../blocks/certificates/cert4.jpg' alt='диплом')
+
+    div(class="prev" id='lightbox-btn-prev') &#10094;
+    div(class="next" id='lightbox-btn-next') &#10095;
