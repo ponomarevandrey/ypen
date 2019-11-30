@@ -17,7 +17,7 @@ block main
     section(class='main') 
       div(class='main__order')
         img(class='main__photo' src='./../blocks/main/handwriting-pocherk.png' alt='Почерк')
-        h1(class='heading heading_size_h1 main__heading') Без усталости за 7 дней
+        h1(class='heading heading_size_h1 main__heading') Без прописей и усталости за 7 дней
         a(class='btn btn_theme_white section8_btn' href='#order') Заказать
       div(class='main__presentation main_align_r')
         img(class='main__photo' src='./../blocks/main/pen-presentation.png' alt='Pen')
@@ -221,47 +221,47 @@ block main
                 placeholder='+7 (999) 999-99-99')
               //-
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-              button(type='button' class='btn btn_theme_yellow section8_btn') Заказать
+              button(class='btn btn_theme_yellow section8_btn' id='order-btn' type='button') Заказать
               div(class='form-group__privacy-policy') Политика конфиденциальности
 
   //-
-  div(class='reviews-wrapper' id='reviews') 
-    section(class='reviews')
-      h1(class='heading heading_size_h1 reviews__heading') Отзывы
-      div(class='reviews__content')
-        div
-          div(class='embed')
-            iframe(
-              src='https://www.youtube.com/embed/PqwEsEKV-_g'
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-          )
-        div
-          div(class='embed')
-            iframe(
-              src='https://www.youtube.com/embed/IPQoP0qLB8w'
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+    div(class='reviews-wrapper' id='reviews') 
+      section(class='reviews')
+        h1(class='heading heading_size_h1 reviews__heading') Отзывы
+        div(class='reviews__content')
+          div
+            div(class='embed')
+              iframe(
+                src='https://www.youtube.com/embed/PqwEsEKV-_g'
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
             )
-        div
-          div(class='embed')
-            iframe(
-              src='https://www.youtube.com/embed/RoUjk60gFdk'
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            )
-        div
-          div(class='embed')
-            iframe(
-              src="https://www.youtube.com/embed/pyoRNgcRZ2E"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-            )
-        div
-          div(class='embed')
-            iframe(
-              src="https://www.youtube.com/embed/ecVlpHtdwIY"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-            )
+          div
+            div(class='embed')
+              iframe(
+                src='https://www.youtube.com/embed/IPQoP0qLB8w'
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+          div
+            div(class='embed')
+              iframe(
+                src='https://www.youtube.com/embed/RoUjk60gFdk'
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
+          div
+            div(class='embed')
+              iframe(
+                src="https://www.youtube.com/embed/pyoRNgcRZ2E"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              )
+          div
+            div(class='embed')
+              iframe(
+                src="https://www.youtube.com/embed/ecVlpHtdwIY"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              )
 
   block footer
   footer(class='footer')
@@ -295,55 +295,52 @@ block main
 
       fieldset(class='form-group-wrapper')
         div(class='form-group')
-          legend(class='form-group__label') 
+          legend(class='form-group__label form-group__legend') 
             span(class='form-group__heading') Оставьте заявку
             span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
 
           div
             div(class='form-group__container')
-              //-
-                label(
-                  class='form-group__label'
-                  for='f1') Имя:
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='f1') Имя:
               input(
                 class='form-group__input'
                 type='text'
                 id='webinar-sign-up-name'
                 name='webinar-sign-up-name'
-                placeholder='Имя покупателя')
+                placeholder='Имя')
               //-
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum 
 
             div(class='form-group__container')
-              //-
-                label(
-                  class='form-group__label'
-                  for='name') A long sentence you're forced to 
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='name') E-mail:
               input(
                 class='form-group__input'
                 type='text'
                 id='webinar-sign-up-email'
                 name='webinar-sign-up-email'
-                placeholder='E-mail покупателя')
+                placeholder='E-mail')
               //-
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Tip text
 
             div(class='form-group__container')
-              //-
-                label(
-                  class='form-group__label'
-                  for='name') Телефон:
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='name') Телефон:
               input(
                 class='form-group__input'
                 type='text'
                 id='webinar-sign-up-tel'
                 name='webinar-sign-up-tel'
-                placeholder='Телефон')
+                placeholder='+7 911 598 65 89')
               //-
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
 
-            div(class='form-group__container')
-              button(type='button' class='btn btn_theme_yellow section8_btn') Записаться на вебинар
+            div(class='form-group__container form-group__container_btn')
+              button(class='btn btn_theme_yellow section8_btn'  id='webinar-sign-up-btn' type='button' name='webinar-sign-up') Записаться на вебинар
 
 
 

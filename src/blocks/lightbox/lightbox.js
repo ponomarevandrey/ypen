@@ -1,7 +1,5 @@
-import { throwStatement } from 'babel-types';
-
 class Lightbox {
-  constructor(config = Lightbox.config) {
+  constructor(config) {
     this._config = config;
 
     this._backdrop = document.querySelector(
@@ -96,19 +94,21 @@ class Lightbox {
   toggleBackdrop() {
     this._backdrop.classList.toggle(this._config.classes.backdropStateModifier);
   }
-
-  static config = {
-    // all class names used in HTML related to Lightbox window component:
-    classes: {
-      backdrop: 'lightbox',
-      backdropStateModifier: 'lightbox_visible',
-      dialogStateModifier: 'lightbox__dialog_visible',
-      closeBtn: 'lightbox__close-btn',
-      prevBtn: 'lightbox-btn-prev',
-      nextBtn: 'lightbox-btn-next',
-      video: 'embed',
-    },
-  };
 }
 
-export { Lightbox };
+const config = {
+  // all class names used in HTML related to Lightbox window component:
+  classes: {
+    backdrop: 'lightbox',
+    backdropStateModifier: 'lightbox_visible',
+    dialogStateModifier: 'lightbox__dialog_visible',
+    closeBtn: 'lightbox__close-btn',
+    prevBtn: 'lightbox-btn-prev',
+    nextBtn: 'lightbox-btn-next',
+    video: 'embed',
+  },
+};
+
+const lightbox = new Lightbox(config);
+
+export { lightbox };

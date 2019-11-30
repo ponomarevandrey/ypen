@@ -1,5 +1,7 @@
 class Modal {
   constructor(config = Modal.config) {
+    const self = this;
+
     this._config = config;
 
     this._backdrop = document.querySelector(
@@ -65,6 +67,8 @@ class Modal {
     if (video) video.pause();
   }
 
+  clearAllInputs() {}
+
   openModal(clickedEl) {
     const newDialog = document.querySelector(`#${clickedEl.dataset.modal}`);
     const visibleDialog = document.querySelector(
@@ -102,4 +106,6 @@ class Modal {
   };
 }
 
-export { Modal };
+const modal = new Modal();
+
+export { modal };

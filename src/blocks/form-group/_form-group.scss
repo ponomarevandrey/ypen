@@ -21,6 +21,10 @@
     display: grid;
     grid-gap: 0.5rem;
     padding-bottom: 1rem;
+
+    &_btn {
+      padding-bottom: 0.4rem;
+    }
   }
 
   &__label {
@@ -28,6 +32,14 @@
     margin-bottom: 0.4rem;
     color: $color_brand_blue;
     font-family: $font-stack_gill-sans;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__legend {
+    padding-bottom: 1rem;
   }
 
   &__heading {
@@ -45,7 +57,7 @@
   &__input {
     width: 100%;
     height: calc(2rem + 2px);
-    padding: 1.5rem;
+    padding: 2rem;
     border: 1px solid transparent;
     resize: vertical;
     background-color: $color_gray-lightest;
