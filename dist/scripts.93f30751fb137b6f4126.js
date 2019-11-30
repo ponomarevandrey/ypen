@@ -10092,8 +10092,8 @@ var _certificates = __webpack_require__(109);
 // EXTERNAL MODULE: ./src/blocks/webinars/_webinars.scss
 var _webinars = __webpack_require__(110);
 
-// EXTERNAL MODULE: ./src/blocks/section8/_section8.scss
-var _section8 = __webpack_require__(111);
+// EXTERNAL MODULE: ./src/blocks/order/_order.scss
+var _order = __webpack_require__(111);
 
 // EXTERNAL MODULE: ./src/blocks/reviews/_reviews.scss
 var _reviews = __webpack_require__(112);

@@ -11,6 +11,15 @@ class Modal {
       `.${this._config.classes.closeBtn}`
     );
 
+    [
+      this._nameInput,
+      this._emailInput,
+      this._telInput,
+    ] = document.querySelectorAll(
+      '#webinar-sign-up-name, #webinar-sign-up-email, #webinar-sign-up-tel'
+    );
+    console.log(this._nameInput, this._emailInput, this._telInput);
+
     document.addEventListener('click', e => this.onClick(e));
     document.addEventListener('keydown', e => this.onKeydown(e));
   }
@@ -67,7 +76,19 @@ class Modal {
     if (video) video.pause();
   }
 
-  clearAllInputs() {}
+  clearAllInputs() {
+    this._nameInput.value = '';
+    this._emailInput.value = '';
+    this._telInput.value = '';
+  }
+
+  get inputsData() {
+    return {
+      name: this._nameInput.value,
+      email: this._emailInput.value,
+      tel: this._telInput.value,
+    };
+  }
 
   openModal(clickedEl) {
     const newDialog = document.querySelector(`#${clickedEl.dataset.modal}`);
@@ -84,9 +105,9 @@ class Modal {
   }
 
   closeModal() {
-    const videoBlock = this._openedDialog.querySelector(
-      `.${this._config.classes.video}`
-    );
+    const videoBlock =
+      this._openedDialog &&
+      this._openedDialog.querySelector(`.${this._config.classes.video}`);
     if (videoBlock) this.stopVideo(videoBlock);
     this.toggleBackdrop();
     delete this._openedDialog;

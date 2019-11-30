@@ -18,7 +18,7 @@ block main
       div(class='main__order')
         img(class='main__photo' src='./../blocks/main/handwriting-pocherk.png' alt='Почерк')
         h1(class='heading heading_size_h1 main__heading') Без прописей и усталости за 7 дней
-        a(class='btn btn_theme_white section8_btn' href='#order') Заказать
+        a(class='order-btn order-btn_theme_white' href='#order') Заказать
       div(class='main__presentation main_align_r')
         img(class='main__photo' src='./../blocks/main/pen-presentation.png' alt='Pen')
       div(class='main__contacts')
@@ -174,55 +174,93 @@ block main
           p(class='text text_display_block') #[strong 2.] Как закон Ньютона находит применение в ручке Ypen и чем Ypen отличается от обычной ручки.
           p(class='text text_display_block') #[strong 3.] Правила подготовки рабочей зоны для письма, методику упражнений для расслабления и переноса внимания для детей на уроке.
           p(class='text text_display_block') #[strong 4.] Разбор типичных ошибок положения тела и ручки при письме, способы исправления осанки, расположения кисти.
-          a(class='btn btn_theme_white webinars__btn' href='###' data-modal='modal-webinar-sign-up') Записаться на вебинар
+          a(class='webinar-signup-btn webinar-signup-btn_theme_white webinars__btn' href='###' data-modal='modal-webinar-sign-up') Записаться на вебинар
 
   //-
 
-  div(class='section8-wrapper' id='order') 
-    section(class='section8') 
-      header(class='section8__header')
-        h1(class='heading heading_size_h1 section8__heading') Выбрать свою Ypen
-        span(class='heading section8__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
+  div(class='order-wrapper' id='order') 
+    section(class='order') 
+      header(class='order__header')
+        h1(class='heading heading_size_h1 order__heading') Выбрать свою Ypen
+        span(class='heading order__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
     
-      div(class='section8__select-pen-box')
-        img(class='section8__selected-pen-photo' src='./../blocks/section8/pen1.png' alt='Blue color pen')
-        div(class='section8__photos-group')
-          img(class='section8__pen-photo' src='./../blocks/section8/pen2.png' alt='Red color pen')
-          img(class='section8__pen-photo' src='./../blocks/section8/pen3.png' alt='Turquoise color pen')
-          img(class='section8__pen-photo ' src='./../blocks/section8/pen4.png' alt='White color pen')
-        div(class='section8__price-box') 
-          span(class='section8__price-sum') 
-            span(class='section8__price-figures') 890
-            span(class='section8__currency') руб. 
-          span(class='section8__price-comment') При заказе от 10 штук #[strong цена 800 рублей]
+      div(class='order__select-pen-box')
+        img(class='order__selected-pen-photo' src='./../blocks/order/pen1.png' alt='Blue color pen')
+        div(class='order__photos-group')
+          img(class='order__pen-photo' src='./../blocks/order/pen2.png' alt='Red color pen')
+          img(class='order__pen-photo' src='./../blocks/order/pen3.png' alt='Turquoise color pen')
+          img(class='order__pen-photo ' src='./../blocks/order/pen4.png' alt='White color pen')
+        div(class='order__price-box') 
+          span(class='order__price-sum') 
+            span(class='order__price-figures') 890
+            span(class='order__currency') руб. 
+          span(class='order__price-comment') При заказе от 10 штук #[strong цена 800 рублей]
     
-      div(class='section8__make-order-box')
-        div(class='section8__frame')
+      div(class='order__make-order-box')
+
+        fieldset(class='form-group-wrapper')
           div(class='form-group')
-            label(
-              class='form-group__label'
-              for='name') 
+            legend(class='form-group__label') 
               span(class='form-group__heading') Оставьте заявку
               span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
-            div(class='form-group__container')
-              input(
-                class='form-group__input'
-                type='text'
-                id='name'
-                name='name'
-                placeholder='Ваше имя')
-              //-
-                div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum
-              input(
-                class='form-group__input'
-                type='text'
-                id='tel'
-                name='tel'
-                placeholder='+7 (999) 999-99-99')
-              //-
-                div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm')
-              button(class='btn btn_theme_yellow section8_btn' id='order-btn' type='button') Заказать
-              div(class='form-group__privacy-policy') Политика конфиденциальности
+
+            div
+              div(class='form-group__container')
+                label(
+                  class='form-group__label form-group__label_hidden'
+                  for='f1') Имя:
+                input(
+                  class='form-group__input'
+                  type='text'
+                  id='order-name'
+                  name='order-name'
+                  placeholder='Имя')
+                //-
+                  div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum 
+
+              div(class='form-group__container')
+                label(
+                  class='form-group__label form-group__label_hidden'
+                  for='name') E-mail:
+                input(
+                  class='form-group__input'
+                  type='text'
+                  id='order-email'
+                  name='order-email'
+                  placeholder='E-mail')
+                //-
+                  div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Tip text
+
+              div(class='form-group__container')
+                label(
+                  class='form-group__label form-group__label_hidden'
+                  for='name') Телефон:
+                input(
+                  class='form-group__input'
+                  type='text'
+                  id='order-tel'
+                  name='order-tel'
+                  placeholder='+7 999 99 99')
+                //-
+                  div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
+
+              div(class='form-group__container')
+                label(
+                  class='form-group__label form-group__label_hidden'
+                  for='name') Адрес доставки:
+                input(
+                  class='form-group__input'
+                  type='text'
+                  id='order-address'
+                  name='order-address'
+                  placeholder='Адрес доставки')
+                //-
+                  div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
+
+              div(class='form-group__container')
+                button(class='order-btn order-btn_theme_yellow order_btn' id='order-btn' type='button' name='webinar-sign-up') Записаться на вебинар
+              div(class='form-group__container order__confirm-msg order__confirm-msg_hidden') Спасибо! Ваша заявка принята, мы свяжемся с вами в течении суток.
+
 
   //-
     div(class='reviews-wrapper' id='reviews') 
@@ -262,6 +300,12 @@ block main
                 src="https://www.youtube.com/embed/ecVlpHtdwIY"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen
               )
+          div
+            div(class='embed')
+              iframe(
+                src="https://www.youtube.com/embed/qOl1j8XJW3s"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              )
 
   block footer
   footer(class='footer')
@@ -295,7 +339,7 @@ block main
 
       fieldset(class='form-group-wrapper')
         div(class='form-group')
-          legend(class='form-group__label form-group__legend') 
+          legend(class='form-group__label') 
             span(class='form-group__heading') Оставьте заявку
             span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
 
@@ -340,21 +384,7 @@ block main
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
 
             div(class='form-group__container form-group__container_btn')
-              button(class='btn btn_theme_yellow section8_btn'  id='webinar-sign-up-btn' type='button' name='webinar-sign-up') Записаться на вебинар
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              button(class='webinar-signup-btn webinar-signup-btn_theme_yellow order_btn'  id='webinar-sign-up-btn' type='button' name='webinar-sign-up') Записаться на вебинар
 
   //-
 
@@ -371,3 +401,7 @@ block main
 
     div(class="prev" id='lightbox-btn-prev') &#10094;
     div(class="next" id='lightbox-btn-next') &#10095;
+
+  
+  //- back to top btn:
+  button(type='button' class='back-to-top-btn' title='Go to top') &#x25B2;

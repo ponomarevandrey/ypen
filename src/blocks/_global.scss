@@ -61,7 +61,7 @@ $color_link: black;
 $color_code-text: #333;
 $color_code-bg: #f2d9e6;
 
-$form__box-shadow_state_initial: 0 0 0 0.2rem lighten($color_black, 88%);
+$form__box-shadow_state_initial: 0 0 0 0.2rem lighten($color_gray-dark, 42%);
 $form__border_state_initial: 1px solid $color_gray-lightest;
 
 $form__box-shadow_state_success: 0 0 0 0.2rem lighten($color_success, 48%);

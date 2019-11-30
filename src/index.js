@@ -20,7 +20,10 @@ import './blocks/webinar-signup-btn/webinar-signup-btn.js';
 import './blocks/order-btn/_order-btn.scss';
 import './blocks/order-btn/order-btn.js';
 
-import './blocks/control/_control.scss';
+import './blocks/back-to-top-btn/_back-to-top-btn.scss';
+import './blocks/back-to-top-btn/back-to-top-btn.js';
+
+// import './blocks/control/_control.scss';
 
 import './blocks/form-group/_form-group.scss';
 
@@ -50,7 +53,7 @@ import './blocks/certificates/_certificates.scss';
 
 import './blocks/webinars/_webinars.scss';
 
-import './blocks/section8/_section8.scss';
+import './blocks/order/_order.scss';
 
 import './blocks/reviews/_reviews.scss';
 // import './blocks/reviews/reviews.js';
