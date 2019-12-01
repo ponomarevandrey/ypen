@@ -17,7 +17,7 @@ class Order {
 
   validateName() {
     console.log('inside validate');
-    const regex = /^[\wа-яА-ЯёЁ]+\s[\wа-яА-ЯёЁ]+$/;
+    const regex = /^[a-zA-Zа-яА-ЯёЁ]+\s[a-zA-Zа-яА-ЯёЁ]+$/;
 
     this._nameInput.parentElement.classList.remove(
       'form-group_validation_success',
@@ -61,6 +61,8 @@ class Order {
     });
     this._orderBlock.querySelector('.form-group').classList.add('disabled');
   }
+
+  displayTip() {}
 
   displayConfirmMsg() {
     const confirmMsg = document.querySelector('.order__confirm-msg');

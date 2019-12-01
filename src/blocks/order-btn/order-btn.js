@@ -9,17 +9,18 @@
  */
 
 import { order } from '../order/order';
+import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
 
 class OrderBtn {
   constructor(config) {
     this._config = config;
 
-    this._orderBtn = document.querySelector(`#${btnConfig.btnID}`);
+    this._orderBtn = document.querySelector(`#${config.btnID}`);
     this._orderBtn.addEventListener('click', e => this.onClick(e));
   }
 
   onClick(e) {
-    // this.sendInputToTeleg();
+    this.sendInputToBot(myTelegramBot);
     // this._orderBtn.textContent = 'Спасибо!';
 
     order.validateName();
@@ -39,11 +40,13 @@ class OrderBtn {
     this._orderBtn.classList.add('order-btn_disabled');
   }
 
-  sendInputToTeleg() {
-    const msg = this.createMsg(order.inputsData);
-    console.log(msg);
-
-    const url = `https://api.telegram.org/bot${telegConfig.authToken}/sendMessage?chat_id=${telegConfig.botChatID}&text="${msg}"&parse_mode=${telegConfig.parseModde}&disable_notification=${telegConfig.disableNotification}`;
+  sendInputToBot(bot) {
+    console.log(bot.authToken, bot.botChatID, bot.parseMode, bot.disableNotif);
+    const url = `https://api.telegram.org/bot${
+      bot.authToken
+    }/sendMessage?chat_id=${bot.chatID}&text="${bot.createMsg(
+      order.inputsData
+    )}"&parse_mode=${bot.parseMode}&disable_notification=${bot.disableNotif}`;
 
     fetch(url)
       .then(response => {
@@ -56,52 +59,13 @@ class OrderBtn {
         throw new Error(error);
       });
   }
-
-  createMsg({ name, email, tel, address }) {
-    return `ЗАКАЗ РУЧКИ %0A %0A
-    Имя: ${name} %0A
-    E-mail: ${email} %0A
-    Телефон: ${tel} %0A
-    Адрес: ${address}`;
-  }
 }
 
 //
 
-const btnConfig = {
+const config = {
   btnID: 'order-btn',
   timeoutBeforeBtnTextChange: 2000,
 };
 
-const telegConfig = {
-  authToken:
-    /*Ev Pay: '882907516:AAGrseLPtW0TvCaB5a1yk_MxiZVRvQjhXRQ',*/ '906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng',
-  botChatID: /* Ev Pay: '935966517',*/ '338459496',
-  // send message in Markdown format:
-  parseModde: 'Markdown',
-  // Sends the message silently. Users will receive a notification
-  // with no sound:
-  disableNotification: true,
-
-  // helper function to find out chatID when you create a new bot;
-  // before calling this function, open Telegram and send any message to your
-  // bot, otherwise the function won't be able to retrieve chatID
-  retrieveBotChatID(authToken = telegConfig.authToken) {
-    const url = `https://api.telegram.org/bot${authToken}/getUpdates`;
-
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(response => {
-        // Telegram chat ID is the same for all messages:
-        const chatID = response.result[0].message.chat.id;
-        console.log(chatID);
-      })
-      .catch(error => {
-        throw new Error(error);
-      });
-  },
-};
-
-const orderBtn = new OrderBtn(btnConfig);
+const orderBtn = new OrderBtn(config);

@@ -7,6 +7,8 @@ import './blocks/_reset.scss';
  * BLOCKS *
  **********/
 
+import './blocks/telegram-bot/telegram-bot.js';
+
 import './blocks/page/_page.scss';
 import './blocks/page/page.js';
 
@@ -22,8 +24,6 @@ import './blocks/order-btn/order-btn.js';
 
 import './blocks/back-to-top-btn/_back-to-top-btn.scss';
 import './blocks/back-to-top-btn/back-to-top-btn.js';
-
-// import './blocks/control/_control.scss';
 
 import './blocks/form-group/_form-group.scss';
 
