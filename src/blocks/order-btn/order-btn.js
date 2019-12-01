@@ -8,8 +8,9 @@
  *
  */
 
-import { order } from '../order/order';
+import { orderFormGroup } from '../order-form-group/order-form-group';
 import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
+import { confirmOrderModal } from '../confirm-order-modal/confirm-order-modal';
 
 class OrderBtn {
   constructor(config) {
@@ -20,19 +21,29 @@ class OrderBtn {
   }
 
   onClick(e) {
-    this.sendInputToBot(myTelegramBot);
-    // this._orderBtn.textContent = 'Спасибо!';
+    const isValid =
+      orderFormGroup.validateName(orderFormGroup.name) &&
+      orderFormGroup.validateEmail(orderFormGroup.email) &&
+      orderFormGroup.validateTel(orderFormGroup.tel) &&
+      orderFormGroup.validateAddress(orderFormGroup.address);
 
-    order.validateName();
-    /*
-    if (order.validateName()) {
-      console.log('valid name');
-      order.disableAllInputs();
-      order.displayConfirmMsg();
-      this.disableBtn();
-      this._orderBtn.textContent = 'Заказать';
+    if (true /*isValid*/) {
+      const modal = document.querySelector('#modal-confirm-order');
+
+      // orderFormGroup.disableAllInputs();
+      // orderFormGroup.displayConfirmMsg();
+      // confirmOrderModal.closeModal(modal);
+      // this.disableBtn();
+      this.sendInputTo(myTelegramBot);
+
+      confirmOrderModal.openModal(modal);
+      orderFormGroup.clearAllInputs(
+        orderFormGroup.name,
+        orderFormGroup.email,
+        orderFormGroup.tel,
+        orderFormGroup.address
+      );
     } else console.log('error');
-    */
   }
 
   disableBtn() {
@@ -40,12 +51,12 @@ class OrderBtn {
     this._orderBtn.classList.add('order-btn_disabled');
   }
 
-  sendInputToBot(bot) {
-    console.log(bot.authToken, bot.botChatID, bot.parseMode, bot.disableNotif);
+  sendInputTo(bot) {
+    console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
     const url = `https://api.telegram.org/bot${
       bot.authToken
     }/sendMessage?chat_id=${bot.chatID}&text="${bot.createMsg(
-      order.inputsData
+      orderFormGroup.inputsData
     )}"&parse_mode=${bot.parseMode}&disable_notification=${bot.disableNotif}`;
 
     fetch(url)
@@ -60,8 +71,6 @@ class OrderBtn {
       });
   }
 }
-
-//
 
 const config = {
   btnID: 'order-btn',

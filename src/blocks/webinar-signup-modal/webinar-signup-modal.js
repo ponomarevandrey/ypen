@@ -1,7 +1,8 @@
-class Modal {
-  constructor(config = Modal.config) {
-    const self = this;
+import { FormGroup } from '../form-group/form-group';
+import { orderBtn } from '../order-btn/order-btn';
 
+class Modal {
+  constructor(config) {
     this._config = config;
 
     this._backdrop = document.querySelector(
@@ -114,19 +115,19 @@ class Modal {
     document.body.style.overflow = '';
     return;
   }
-
-  static config = {
-    /* all class names used in HTML related to modal window component: */
-    classes: {
-      backdrop: 'modal',
-      backdropStateModifier: 'modal_visible',
-      dialogStateModifier: 'modal__dialog_visible',
-      closeBtn: 'modal__close-btn',
-      video: 'embed',
-    },
-  };
 }
 
-const modal = new Modal();
+const config = {
+  /* all class names used in HTML related to modal window component: */
+  classes: {
+    backdrop: 'webinar-signup-modal',
+    backdropStateModifier: 'webinar-signup-modal_visible',
+    dialogStateModifier: 'webinar-signup-modal__dialog_visible',
+    closeBtn: 'webinar-signup-modal__close-btn',
+    video: 'embed',
+  },
+};
 
-export { modal };
+const webinarSignupModal = new Modal(config);
+
+export { webinarSignupModal };

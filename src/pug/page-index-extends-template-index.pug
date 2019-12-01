@@ -185,11 +185,11 @@ block main
         span(class='heading order__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
     
       div(class='order__select-pen-box')
-        img(class='order__selected-pen-photo' src='./../blocks/order/pen1.png' alt='Blue color pen')
+        img(class='order__selected-pen-photo' src='./../blocks/order-form-group/pen1.png' alt='Blue color pen')
         div(class='order__photos-group')
-          img(class='order__pen-photo' src='./../blocks/order/pen2.png' alt='Red color pen')
-          img(class='order__pen-photo' src='./../blocks/order/pen3.png' alt='Turquoise color pen')
-          img(class='order__pen-photo ' src='./../blocks/order/pen4.png' alt='White color pen')
+          img(class='order__pen-photo' src='./../blocks/order-form-group/pen2.png' alt='Red color pen')
+          img(class='order__pen-photo' src='./../blocks/order-form-group/pen3.png' alt='Turquoise color pen')
+          img(class='order__pen-photo ' src='./../blocks/order-form-group/pen4.png' alt='White color pen')
         div(class='order__price-box') 
           span(class='order__price-sum') 
             span(class='order__price-figures') 890
@@ -208,13 +208,13 @@ block main
               div(class='form-group__container')
                 label(
                   class='form-group__label form-group__label_hidden'
-                  for='f1') Имя:
+                  for='f1') Имя и фамилия:
                 input(
                   class='form-group__input'
                   type='text'
                   id='order-name'
                   name='order-name'
-                  placeholder='Имя')
+                  placeholder='Имя и фамилия')
                 //-
                   div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum 
 
@@ -240,7 +240,7 @@ block main
                   type='text'
                   id='order-tel'
                   name='order-tel'
-                  placeholder='+7 999 99 99')
+                  placeholder='+7 (999) 999 99 99')
                 //-
                   div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
 
@@ -258,9 +258,120 @@ block main
                   div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
 
               div(class='form-group__container')
-                button(class='order-btn order-btn_theme_yellow order_btn' id='order-btn' type='button' name='webinar-sign-up') Записаться на вебинар
+                button(class='order-btn order-btn_theme_yellow order_btn' id='order-btn' type='button' name='webinar-sign-up') Заказать
               div(class='form-group__container order__confirm-msg order__confirm-msg_hidden') Спасибо! Ваша заявка принята, мы свяжемся с вами в течении суток.
 
+
+  div(class='contacts-wrapper' id='contacts') 
+    section(class='contacts') 
+
+      a(
+      href=`https://www.facebook.com/ypen.ru`
+      class='contacts__link'
+      aria-hidden='true'
+      focusable='false'
+      title='Facebook'
+      )
+        span(class='contacts__access-label') Facebook
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_facebook`)
+          use(xlink:href='./img/sprite.svg#facebook')
+
+
+      a(
+        href=`https://www.instagram.com/ypen.ru/`
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='Instagram'
+      )
+        span(class='contacts__access-label') Instagram
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_instagram`)
+          use(xlink:href='./img/sprite.svg#instagram')
+
+
+      a(
+        href=`https://ok.ru/profile/593343391780`
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='Odnoklassniki'
+      )
+        span(class='contacts__access-label') Odnoklassniki
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_odnoklassniki`)
+          use(xlink:href='./img/sprite.svg#odnoklassniki')
+
+
+      a(
+        href=`hhttps://www.youtube.com/channel/UCBwrgc1eO3qYoa8hymk9ugw`
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='YouTube'
+      )
+        span(class='contacts__access-label') YouTube
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_youtube`)
+          use(xlink:href='./img/sprite.svg#youtube')
+
+
+      a(
+        href=`https://vk.com/ypen_ru`
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='VKontakte'
+      )
+        span(class='contacts__access-label') VKontakte
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_vkontakte`)
+          use(xlink:href='./img/sprite.svg#vkontakte')
+
+
+      a(
+        href=`http://telegram.me/Y_Pen`
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='Telegram'
+      )
+        span(class='contacts__access-label') Telegram
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_telegram`)
+          use(xlink:href='./img/sprite.svg#telegram')
+
+
+      a(
+        href='viber://chat?number=+79215150004"'
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='Viber'
+      )
+        span(class='contacts__access-label') Viber
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_viber`)
+          use(xlink:href='./img/sprite.svg#viber')
+
+
+      a(
+        href='skype:evgeniypay?chat'
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='Skype'
+      )
+        span(class='contacts__access-label') Skype
+        svg(class=`contacts__img contacts__img_size_sm contacts__img_color_skype`)
+          use(xlink:href='./img/sprite.svg#skype')
+
+
+      a(
+        href='https://wa.me/+79215150004'
+        class='contacts__link'
+        aria-hidden='true'
+        focusable='false'
+        title='Whatsapp'
+      )
+        span(class='contacts__access-label') Whatsapp
+        svg(class=`contacts__img contacts__img_size_sm
+         contacts__img_color_whatsapp`)
+          use(xlink:href='./img/sprite.svg#whatsapp')
 
   //-
     div(class='reviews-wrapper' id='reviews') 
@@ -328,14 +439,19 @@ block main
 
   //-
 
-  div(class='modal')
-    span(class='modal__close-btn') &times;
 
-    div(class='modal__dialog modal__dialog_video' id='modal-video')
+
+  div(class='webinar-signup-modal')
+    span(class='webinar-signup-modal__close-btn') &times;
+
+    div(class='confirm-order-modal__dialog' id='modal-confirm-order')
+      span(class='') Спасибо! Ваша заявка принята, мы свяжемся с вами в течении суток.
+
+    div(class='webinar-signup-modal__dialog webinar-signup-modal__dialog_video' id='modal-video')
       div(class='embed')
         iframe(class='main__video-preview' src="https://www.youtube.com/embed/1N2vRznEQQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
-    div(class='modal__dialog' id='modal-webinar-sign-up')
+    div(class='webinar-signup-modal__dialog' id='modal-webinar-sign-up')
 
       fieldset(class='form-group-wrapper')
         div(class='form-group')
@@ -347,13 +463,13 @@ block main
             div(class='form-group__container')
               label(
                 class='form-group__label form-group__label_hidden'
-                for='f1') Имя:
+                for='f1') Имя и фамилия:
               input(
                 class='form-group__input'
                 type='text'
                 id='webinar-sign-up-name'
                 name='webinar-sign-up-name'
-                placeholder='Имя')
+                placeholder='Имя и фамилия')
               //-
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum 
 
@@ -379,7 +495,7 @@ block main
                 type='text'
                 id='webinar-sign-up-tel'
                 name='webinar-sign-up-tel'
-                placeholder='+7 911 598 65 89')
+                placeholder='+7 999 999 99 99')
               //-
                 div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the 
 
@@ -401,7 +517,3 @@ block main
 
     div(class="prev" id='lightbox-btn-prev') &#10094;
     div(class="next" id='lightbox-btn-next') &#10095;
-
-  
-  //- back to top btn:
-  button(type='button' class='back-to-top-btn' title='Go to top') &#x25B2;

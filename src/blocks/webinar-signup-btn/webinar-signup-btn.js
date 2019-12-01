@@ -8,7 +8,9 @@
  *
  */
 
-import { modal } from '../modal/modal.js';
+import { webinarSignupModal } from '../webinar-signup-modal/webinar-signup-modal';
+import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
+import { orderFormGroup } from '../order-form-group/order-form-group';
 
 class WebinarSignupBtn {
   constructor(config) {
@@ -19,13 +21,30 @@ class WebinarSignupBtn {
   }
 
   onClick(e) {
-    this._webinarSignupBtn.textContent = 'Спасибо!';
+    const isValid =
+      orderFormGroup.validateName(orderFormGroup.name) &&
+      orderFormGroup.validateEmail(orderFormGroup.email) &&
+      orderFormGroup.validateTel(orderFormGroup.tel) &&
+      orderFormGroup.validateAddress(orderFormGroup.address);
 
-    setTimeout(() => {
-      modal.closeModal();
-      modal.clearAllInputs();
-      this._webinarSignupBtn.textContent = 'Записаться на вебинар';
-    }, this._config.timeoutBeforeBtnTextChange);
+    if (isValid) {
+      this.sendInputTo(myTelegramBot);
+      this._webinarSignupBtn.textContent = 'Спасибо!';
+      setTimeout(() => {
+        orderFormGroup.clearAllInputs(
+          // create new component from FormGroup- webinarSignupFormGroup.
+          // webinarSignupFormGroup.name
+
+          orderFormGroup.name,
+          orderFormGroup.email,
+          orderFormGroup.tel,
+          orderFormGroup.address
+        );
+        webinarSignupModal.closeModal();
+        //this._webinarSignupBtn.textContent = 'Записаться на вебинар';
+        this.textContent = 'Записаться на вебинар';
+      }, this._config.timeoutBeforeBtnTextChange);
+    } else throw new Error('Input is not valid');
   }
 }
 
@@ -37,7 +56,7 @@ function createMsg({ name, email, tel }) {
 }
 
 function sendInputToTeleg(e) {
-  const msg = createMsg(modal.inputsData);
+  const msg = createMsg(webinarSignupModal.inputsData);
   console.log(msg);
 
   const url = `https://api.telegram.org/bot${telegConfig.authToken}/sendMessage?chat_id=${telegConfig.botChatID}&text="${msg}"&parse_mode=${telegConfig.parseModde}&disable_notification=${telegConfig.disableNotification}`;
@@ -60,7 +79,7 @@ const btnConfig = {
   btnID: 'webinar-sign-up-btn',
   timeoutBeforeBtnTextChange: 2000,
 };
-
+/*
 const telegConfig = {
   authToken: '882907516:AAGrseLPtW0TvCaB5a1yk_MxiZVRvQjhXRQ', // '906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng',
   botChatID: '935966517', // '338459496',
@@ -89,7 +108,7 @@ const telegConfig = {
         throw new Error(error);
       });
   },
-};
+};*/
 
 const webinarSignupBtn = new WebinarSignupBtn(btnConfig);
 const webinarSignupBtnEl = document.querySelector(`#${btnConfig.btnID}`);
