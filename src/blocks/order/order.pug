@@ -1,0 +1,80 @@
+div(class='order-wrapper' id='order') 
+  section(class='order') 
+    header(class='order__header')
+      h1(class='heading heading_size_h1 order__heading') Выбрать свою Ypen
+      span(class='heading order__subheading') В каждой Ypen стержень легко меняется, и одной ручки хватит на долгое время
+  
+    div(class='order__select-pen-box')
+      img(class='order__selected-pen-photo' src='./../blocks/order-form-group/pen1.png' alt='Blue color pen')
+      div(class='order__photos-group')
+        img(class='order__pen-photo' src='./../blocks/order-form-group/pen2.png' alt='Red color pen')
+        img(class='order__pen-photo' src='./../blocks/order-form-group/pen3.png' alt='Turquoise color pen')
+        img(class='order__pen-photo ' src='./../blocks/order-form-group/pen4.png' alt='White color pen')
+      div(class='order__price-box') 
+        span(class='order__price-sum') 
+          span(class='order__price-figures') 890
+          span(class='order__currency') руб. 
+        span(class='order__price-comment') При заказе от 10 штук #[strong цена 800 рублей]
+  
+    div(class='order__make-order-box')
+
+      fieldset(class='form-group-wrapper')
+        div(class='form-group')
+          legend(class='form-group__label') 
+            span(class='form-group__heading') Оставьте заявку
+            span(class='form-group__subheading') Мы свяжемся с вами в ближайшее время
+
+          div
+            div(class='form-group__container')
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='f1') Имя и фамилия:
+              input(
+                class='form-group__input'
+                type='text'
+                id='order-name'
+                name='order-name'
+                placeholder='Имя и фамилия')
+              div(class='form-group__tip form-group__tip_hidden text text_line-height_lg text_color_gray-light text_size_sm') Пример: Ольга Петрова
+
+            div(class='form-group__container')
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='name') E-mail:
+              input(
+                class='form-group__input'
+                type='text'
+                id='order-email'
+                name='order-email'
+                placeholder='E-mail')
+              div(class='form-group__tip form-group__tip_hidden text text_line-height_lg text_color_gray-light text_size_sm') Пример: olga@mail.ru
+
+            div(class='form-group__container')
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='name') Телефон:
+              input(
+                class='form-group__input'
+                type='text'
+                id='order-tel'
+                name='order-tel'
+                placeholder='+7 (999) 999 99 99')
+              div(class='form-group__tip form-group__tip_hidden text text_line-height_lg text_color_gray-light text_size_sm') Пример: +7 (999) 999 99 99
+
+            div(class='form-group__container')
+              label(
+                class='form-group__label form-group__label_hidden'
+                for='name') Адрес доставки:
+              input(
+                class='form-group__input'
+                type='text'
+                id='order-address'
+                name='order-address'
+                placeholder='Адрес доставки')
+              div(class='form-group__tip form-group__tip_hidden text text_line-height_lg text_color_gray-light text_size_sm') Пожалуйста, введите адрес в свободной форме. Пример: г. Москва, ул. Академика Королёва, д.3, кв.51, 127427
+
+            div(class='form-group__container')
+              button(class='order-btn order-btn_theme_yellow order_btn' id='order-trigger-btn' type='button' name='order-btn') Заказать
+            div(class='form-group__container order__confirm-msg order__confirm-msg_hidden') Спасибо! Ваша заявка принята, мы свяжемся с вами в течении суток.
+
+

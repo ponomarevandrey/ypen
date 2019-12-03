@@ -6,12 +6,19 @@ class TelegramBot {
     this.disableNotif = disableNotif;
   }
 
-  createMsg({ name, email, tel, address }) {
+  createOrderMsg({ name, email, tel, address }) {
     return `ЗАКАЗ РУЧКИ %0A %0A
     Имя: ${name} %0A
     E-mail: ${email} %0A
     Телефон: ${tel} %0A
     Адрес: ${address}`;
+  }
+
+  createWebinarSignupMsg({ name, email, tel }) {
+    return `ЗАПИСЬ НА ВЕБИНАР %0A %0A 
+    Имя: ${name} %0A 
+    E-mail: ${email} %0A 
+    Телефон: ${tel}`;
   }
 
   // Helper function to find out bot's chatID when you create a new bot.

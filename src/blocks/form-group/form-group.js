@@ -10,7 +10,7 @@ class FormGroup {
   }
 
   validateName(inputEl) {
-    console.log(inputEl);
+    // console.log(inputEl);
     const regex = /^[a-zA-Zа-яА-ЯёЁ]+\s[a-zA-Zа-яА-ЯёЁ]+$/;
     const inputValue = inputEl.value;
 
@@ -19,13 +19,17 @@ class FormGroup {
       'form-group_validation_error'
     );
 
-    console.log('works!');
+    // console.log('works!');
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.remove('form-group__tip_hidden');
     }
   }
 
@@ -40,9 +44,13 @@ class FormGroup {
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.remove('form-group__tip_hidden');
     }
   }
 
@@ -57,9 +65,13 @@ class FormGroup {
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.remove('form-group__tip_hidden');
     }
   }
 
@@ -74,14 +86,24 @@ class FormGroup {
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
+      const tip = inputEl.parentElement.querySelector('.form-group__tip');
+      tip.classList.remove('form-group__tip_hidden');
     }
   }
 
-  clearAllInputs(...inputEl) {
-    inputEl.forEach(input => (input.value = ''));
+  resetInputs(...inputs) {
+    inputs.forEach(input => {
+      input.value = '';
+      input.parentElement.classList.remove(
+        'form-group_validation_success',
+        'form-group_validation_error'
+      );
+    });
   }
 
   // method doesn- wotk, rewrite it

@@ -177,7 +177,7 @@ module.exports = (env, options) => {
         inject: true,
         hash: false,
         filename: 'index.html',
-        template: './src/pug/page-index-extends-template-index.pug',
+        template: './src/pug/template-index.pug',
         minify: {
           removeComments: true,
           collapseWhitespace: false,

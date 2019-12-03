@@ -45,8 +45,22 @@ html(lang='ru' class='page')
   
     noscript Your browser doesn't support JavaScript or you have disabled JavaScript.
 
-    block header
+    include ./../blocks/header/header.pug
+    include ./../blocks/main/main.pug
+    include ./../blocks/benefits1/benefits1.pug
+    include ./../blocks/benefits2/benefits2.pug
+    include ./../blocks/benefits3/benefits3.pug
+    include ./../blocks/benefits4/benefits4.pug
+    include ./../blocks/benefits5/benefits5.pug
+    include ./../blocks/certificates/certificates.pug
+    include ./../blocks/webinars/webinars.pug
+    include ./../blocks/order/order.pug
+    //- include ./../blocks/review/review.pug
+    include ./../blocks/footer/footer.pug
 
-    block main
-
-    block footer
+    include ./../blocks/contacts/contacts.pug
+    include ./../blocks/lightbox/lightbox.pug
+    include ./../blocks/confirm-order-modal/confirm-order-modal.pug
+    include ./../blocks/webinar-signup-modal/webinar-signup-modal.pug
+    include ./../blocks/video-modal/video-modal.pug
+    

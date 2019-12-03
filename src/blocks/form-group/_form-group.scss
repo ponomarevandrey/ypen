@@ -104,10 +104,14 @@
   }
 
   &__tip {
-    padding-top: 0.4rem;
+    padding-top: 0;
 
     color: $color_gray-light;
     font-size: 80%;
+
+    &_hidden {
+      display: none;
+    }
   }
 
   // Modifiers:

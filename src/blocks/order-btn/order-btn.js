@@ -7,43 +7,35 @@
  * How to use: https://core.telegram.org/bots
  *
  */
+import { Btn } from '../btn/btn';
 
-import { orderFormGroup } from '../order-form-group/order-form-group';
-import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
 import { confirmOrderModal } from '../confirm-order-modal/confirm-order-modal';
+import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
+import { orderFormGroup } from '../order-form-group/order-form-group';
 
-class OrderBtn {
+class OrderBtn extends Btn {
   constructor(config) {
-    this._config = config;
-
-    this._orderBtn = document.querySelector(`#${config.btnID}`);
-    this._orderBtn.addEventListener('click', e => this.onClick(e));
+    super(config);
   }
 
-  onClick(e) {
+  onClick(e, dialog) {
     const isValid =
       orderFormGroup.validateName(orderFormGroup.name) &&
       orderFormGroup.validateEmail(orderFormGroup.email) &&
       orderFormGroup.validateTel(orderFormGroup.tel) &&
       orderFormGroup.validateAddress(orderFormGroup.address);
 
-    if (true /*isValid*/) {
-      const modal = document.querySelector('#modal-confirm-order');
+    if (isValid) {
+      this.sendInputTo(this._config.bot);
 
-      // orderFormGroup.disableAllInputs();
-      // orderFormGroup.displayConfirmMsg();
-      // confirmOrderModal.closeModal(modal);
-      // this.disableBtn();
-      this.sendInputTo(myTelegramBot);
-
-      confirmOrderModal.openModal(modal);
-      orderFormGroup.clearAllInputs(
+      confirmOrderModal.openModal(dialog);
+      orderFormGroup.resetInputs(
         orderFormGroup.name,
         orderFormGroup.email,
         orderFormGroup.tel,
         orderFormGroup.address
       );
-    } else console.log('error');
+    } else throw new Error('Invalid input');
   }
 
   disableBtn() {
@@ -55,7 +47,7 @@ class OrderBtn {
     console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
     const url = `https://api.telegram.org/bot${
       bot.authToken
-    }/sendMessage?chat_id=${bot.chatID}&text="${bot.createMsg(
+    }/sendMessage?chat_id=${bot.chatID}&text="${bot.createOrderMsg(
       orderFormGroup.inputsData
     )}"&parse_mode=${bot.parseMode}&disable_notification=${bot.disableNotif}`;
 
@@ -73,8 +65,16 @@ class OrderBtn {
 }
 
 const config = {
-  btnID: 'order-btn',
+  IDs: {
+    btn: 'order-trigger-btn',
+    dialog: 'confirm-order-dialog',
+  },
+  classes: {
+    // modal: 'modal_webinar-signup', // modal bg
+  },
+  modalInstance: confirmOrderModal,
   timeoutBeforeBtnTextChange: 2000,
+  bot: myTelegramBot,
 };
 
 const orderBtn = new OrderBtn(config);

@@ -7,8 +7,7 @@ class OrderFormGroup extends FormGroup {
     // this._name, this._email ... are created automatically in the loop above
 
     this.name.addEventListener('focusout', () => {
-      console.log(this.name);
-      super.validateName(this.name);
+      this.validateName(this.name);
     });
 
     this.email.addEventListener('focusout', () => {

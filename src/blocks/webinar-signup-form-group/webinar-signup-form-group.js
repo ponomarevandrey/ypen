@@ -4,8 +4,6 @@ class WebinarSignupFormGroup extends FormGroup {
   constructor(config) {
     super(config);
 
-    // this._name, this._email ... are created automatically in the loop above
-
     this.name.addEventListener('focusout', () => {
       console.log(this.name);
       super.validateName(this.name);
@@ -18,9 +16,6 @@ class WebinarSignupFormGroup extends FormGroup {
     this.tel.addEventListener('focusout', () => {
       this.validateTel(this.tel);
     });
-    this.address.addEventListener('focusout', () => {
-      this.validateAddress(this.address);
-    });
   }
 
   get inputsData() {
@@ -28,7 +23,19 @@ class WebinarSignupFormGroup extends FormGroup {
       name: this.name.value,
       email: this.email.value,
       tel: this.tel.value,
-      address: this.address.value,
     };
   }
 }
+
+const config = {
+  // blockID: 'order',
+  inputIDs: {
+    name: 'webinar-sign-up-name',
+    email: 'webinar-sign-up-email',
+    tel: 'webinar-sign-up-tel',
+  },
+};
+
+const webinarSignupFormGroup = new WebinarSignupFormGroup(config);
+//console.log(webinarSignupFormGroup);
+export { webinarSignupFormGroup };
