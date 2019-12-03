@@ -52,6 +52,8 @@ import './blocks/certificates/_certificates.scss';
 
 import './blocks/webinars/_webinars.scss';
 
+import './blocks/order/_order.scss';
+
 import './blocks/telegram-bot/telegram-bot.js';
 
 import './blocks/btn/_btn.scss';

@@ -19,10 +19,13 @@ class WebinarSignupBtn extends Btn {
     super(config);
 
     this._btn = this.findElByID(this._config.IDs.btn);
-    this._btn.addEventListener('click', e => this.nClick(e, this.modal.dialog));
+    // for some reason if you name this function as "onClick". this will lead to calling parent onClick (from btn.js) and then the onClick. As I understand for now, there are two evebt listeners attached to this btn, one from Btn class and another one here - below: (also see comments in order-btn.js, there is thee same issue)
+    this._btn.addEventListener('click', e =>
+      this.handleClick(e, this.modal.dialog)
+    );
   }
 
-  nClick(e, dialog) {
+  handleClick(e, dialog) {
     const isValid =
       webinarSignupFormGroup.validateName(webinarSignupFormGroup.name) &&
       webinarSignupFormGroup.validateEmail(webinarSignupFormGroup.email) &&

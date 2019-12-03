@@ -12,7 +12,6 @@ class Btn {
     this._btn.addEventListener('click', e =>
       this.onClick(e, this.modal.dialog)
     );
-    console.log(this._btn, '!');
   }
 
   onClick(e, dialog) {

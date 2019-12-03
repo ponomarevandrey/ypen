@@ -16,9 +16,18 @@ import { orderFormGroup } from '../order-form-group/order-form-group';
 class OrderBtn extends Btn {
   constructor(config) {
     super(config);
+
+    // this._modal = this.findElByID(this._config.IDs.dialog);
+    // this._btn = this.findElByID(this._config.IDs.btn);
+    //
+    // for some reason if you name the function handleClick as "onClick" (the same name has even listener in parent 'Btn' class). this will lead to calling parent onClick (from btn.js) and then the onClick here. As I understand for now, there are two event listeners attached to this btn, one from Btn class and another one here - below:
+    // (if you uncomment this._modal = ... above, it will break the stuff)
+    this._btn.addEventListener('click', e =>
+      this.handleClick(e, this.modal.dialog)
+    );
   }
 
-  onClick(e, dialog) {
+  handleClick(e, dialog) {
     const isValid =
       orderFormGroup.validateName(orderFormGroup.name) &&
       orderFormGroup.validateEmail(orderFormGroup.email) &&
