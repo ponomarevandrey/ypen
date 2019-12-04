@@ -6,12 +6,6 @@ class Modal {
       `.${this._config.classes.backdrop}`
     );
     this._opened = false;
-
-    /*
-        this._btn = this.findElByID(this._config.IDs.btn);
-    const dialog = this.findElByID(this._config.IDs.dialog);
-    this._modal = this.findElByClass(this._config.classes.modal);
-*/
     this._closeBtn = document.querySelector(
       `.${this._config.classes.backdrop} .${this._config.classes.closeBtn}`
     );
@@ -24,6 +18,7 @@ class Modal {
   // confirm order moda:
   onClick(e) {
     const clickedEl = e.target;
+    console.log('inside modal');
 
     if (clickedEl === this._backdrop || clickedEl === this._closeBtn) {
       this.closeModal(this.dialog); // webinar signup modal: this.closeModal();
@@ -37,7 +32,7 @@ class Modal {
       );
       if (videoInModal) this.stopVideo(videoInModal);
       this.toggleBackdrop();
-      delete this._openedDialog;
+      this._opened = false;
       document.body.style.overflow = '';
       return;
     }
@@ -62,13 +57,6 @@ class Modal {
     this.showDialog(newDialog);
     this._openedDialog = newDialog;
     document.body.style.overflow = 'hidden';
-
-    /* alternative openModal code:
-    this.toggleBackdrop();
-
-    this.showDialog(el);
-    document.body.style.overflow = 'hidden';
-    */
   }
 
   closeModal(el) {
@@ -89,15 +77,7 @@ class Modal {
       return;
     }
   }
-  /*
-  get inputsData() {
-    return {
-      name: this._nameInput.value,
-      email: this._emailInput.value,
-      tel: this._telInput.value,
-    };
-  }
-  */
+
   hideDialog(dialog) {
     dialog.classList.remove(this._config.classes.dialogStateModifier);
   }

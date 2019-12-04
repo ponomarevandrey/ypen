@@ -10,7 +10,6 @@ class FormGroup {
   }
 
   validateName(inputEl) {
-    // console.log(inputEl);
     const regex = /^[a-zA-Zа-яА-ЯёЁ]+\s[a-zA-Zа-яА-ЯёЁ]+$/;
     const inputValue = inputEl.value;
 
@@ -19,12 +18,8 @@ class FormGroup {
       'form-group_validation_error'
     );
 
-    // console.log('works!');
-
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
-      const tip = inputEl.parentElement.querySelector('.form-group__tip');
-      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
@@ -44,8 +39,6 @@ class FormGroup {
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
-      const tip = inputEl.parentElement.querySelector('.form-group__tip');
-      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
@@ -65,8 +58,6 @@ class FormGroup {
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
-      const tip = inputEl.parentElement.querySelector('.form-group__tip');
-      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
@@ -86,8 +77,6 @@ class FormGroup {
 
     if (regex.test(inputValue)) {
       inputEl.parentElement.classList.add('form-group_validation_success');
-      const tip = inputEl.parentElement.querySelector('.form-group__tip');
-      tip.classList.add('form-group__tip_hidden');
       return true;
     } else {
       inputEl.parentElement.classList.add('form-group_validation_error');
@@ -98,6 +87,8 @@ class FormGroup {
 
   resetInputs(...inputs) {
     inputs.forEach(input => {
+      const tip = input.parentElement.querySelector('.form-group__tip');
+      tip.classList.add('form-group__tip_hidden');
       input.value = '';
       input.parentElement.classList.remove(
         'form-group_validation_success',
@@ -105,16 +96,6 @@ class FormGroup {
       );
     });
   }
-
-  // method doesn- wotk, rewrite it
-
-  disableAllInputs() {
-    for (let id in this._config.inputIDs)
-      this[`${id}`].setAttribute('disabled', '');
-    this._orderBlock.querySelector('.form-group').classList.add('disabled');
-  }
-
-  displayTip(inputID) {}
 }
 
 export { FormGroup };

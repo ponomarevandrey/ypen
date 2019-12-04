@@ -1,0 +1,75 @@
+.order-calculator {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  @media screen and (min-width: $screen-xl) {
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: auto auto;
+  }
+
+  &__selected-pen-photo {
+    max-width: 100%;
+  }
+
+  &__photos-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @media screen and (min-width: $screen-xl) {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__pen-photo {
+    max-width: 100%;
+    margin: 1rem;
+  }
+
+  //-
+
+  &__price-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    color: $color_brand_blue;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column-end: span 2;
+    }
+  }
+
+  &__price-box > *:not(:last-child) {
+    padding-right: 3rem;
+  }
+
+  &__price-sum {
+  }
+
+  &__price-figures {
+    font-family: $font-stack_gill-sans;
+    font-size: 4rem;
+  }
+
+  &__price-comment {
+    max-width: 12rem;
+  }
+
+  &__currency {
+    position: relative;
+    bottom: 5px;
+
+    padding-left: 0.7rem;
+
+    font-weight: bold;
+  }
+}

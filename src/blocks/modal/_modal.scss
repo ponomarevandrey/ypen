@@ -71,6 +71,11 @@
     &_confirm {
       background-color: $color_brand_yellow;
       font-weight: bold;
+      display: grid;
+      grid-template-rows: 70px auto;
+      grid-auto-flow: row;
+      grid-gap: 1.5rem;
+      justify-items: center;
     }
 
     &_visible {

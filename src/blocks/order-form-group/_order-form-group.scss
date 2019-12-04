@@ -1,4 +1,17 @@
-.order {
+.order-form-group {
+  padding: 4vw;
+
+  text-align: center;
+
+  border-radius: 12px;
+  box-shadow: 0 0 20px $color_gray-lightest;
+  border-color: $color_gray-lightest;
+
+  @media screen and (min-width: $screen-md) {
+    padding: 3rem;
+    max-width: 300px;
+  }
+
   &__btn {
     width: 100%;
   }
@@ -18,21 +31,6 @@
 
     &_hidden {
       display: none;
-    }
-  }
-
-  &__make-order-box {
-    padding: 4vw;
-
-    text-align: center;
-
-    border-radius: 12px;
-    box-shadow: 0 0 20px $color_gray-lightest;
-    border-color: $color_gray-lightest;
-
-    @media screen and (min-width: $screen-md) {
-      padding: 3rem;
-      max-width: 300px;
     }
   }
 }

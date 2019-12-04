@@ -26,16 +26,17 @@ import './blocks/text/_text.scss';
 
 import './blocks/heading/_heading.scss';
 
-import './blocks/select/_select.scss';
-
 import './blocks/embed/_embed.scss';
 
 import './blocks/icons/_icons.scss';
 
 import './blocks/logo/_logo.scss';
 
+import './blocks/img-svg/_img-svg.scss';
+
 import './blocks/header/_header.scss';
 
+import './blocks/main/main.js';
 import './blocks/main/_main.scss';
 
 import './blocks/benefits1/_benefits1.scss';
@@ -54,6 +55,8 @@ import './blocks/webinars/_webinars.scss';
 
 import './blocks/order/_order.scss';
 
+import './blocks/order-calculator/_order-calculator.scss';
+
 import './blocks/telegram-bot/telegram-bot.js';
 
 import './blocks/btn/_btn.scss';
@@ -65,16 +68,12 @@ import './blocks/form-group/form-group.js';
 import './blocks/modal/_modal.scss';
 import './blocks/modal/modal.js';
 
-// Webinar Sign Up module:
 import './blocks/webinar-signup-modal/webinar-signup-modal.js';
 
 import './blocks/webinar-signup-btn/_webinar-signup-btn.scss';
 import './blocks/webinar-signup-btn/webinar-signup-btn.js';
 
 import './blocks/webinar-signup-form-group/webinar-signup-form-group.js';
-//
-
-// Order module:
 
 import './blocks/order-btn/_order-btn.scss';
 import './blocks/order-btn/order-btn.js';
@@ -83,8 +82,6 @@ import './blocks/order-form-group/_order-form-group.scss';
 import './blocks/order-form-group/order-form-group.js';
 
 import './blocks/confirm-order-modal/confirm-order-modal.js';
-
-//
 
 import './blocks/reviews/_reviews.scss';
 // import './blocks/reviews/reviews.js';

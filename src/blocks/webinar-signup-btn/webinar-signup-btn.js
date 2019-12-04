@@ -17,69 +17,79 @@ import { webinarSignupFormGroup } from '../webinar-signup-form-group/webinar-sig
 class WebinarSignupBtn extends Btn {
   constructor(config) {
     super(config);
-
-    this._btn = this.findElByID(this._config.IDs.btn);
-    // for some reason if you name this function as "onClick". this will lead to calling parent onClick (from btn.js) and then the onClick. As I understand for now, there are two evebt listeners attached to this btn, one from Btn class and another one here - below: (also see comments in order-btn.js, there is thee same issue)
-    this._btn.addEventListener('click', e =>
-      this.handleClick(e, this.modal.dialog)
-    );
   }
 
-  handleClick(e, dialog) {
-    const isValid =
-      webinarSignupFormGroup.validateName(webinarSignupFormGroup.name) &&
-      webinarSignupFormGroup.validateEmail(webinarSignupFormGroup.email) &&
-      webinarSignupFormGroup.validateTel(webinarSignupFormGroup.tel);
+  handleEvent(e) {
+    if (e.type === 'click') {
+      const isValid =
+        webinarSignupFormGroup.validateName(webinarSignupFormGroup.name) &&
+        webinarSignupFormGroup.validateEmail(webinarSignupFormGroup.email) &&
+        webinarSignupFormGroup.validateTel(webinarSignupFormGroup.tel);
 
-    if (isValid) {
-      this.sendInputTo(this._config.bot);
-      this._btn.textContent = 'Спасибо!';
-      setTimeout(() => {
-        webinarSignupModal.closeModal(dialog);
-        webinarSignupFormGroup.resetInputs(
-          webinarSignupFormGroup.name,
-          webinarSignupFormGroup.email,
-          webinarSignupFormGroup.tel
-        );
+      if (isValid) {
+        this.sendInputTo(this._config.bots);
+        this._config.btn.textContent = 'Спасибо!';
 
-        this._btn.textContent = 'Записаться на вебинар';
-      }, this._config.timeoutBeforeBtnTextChange);
-    } else throw new Error('Input is not valid');
+        setTimeout(() => {
+          webinarSignupModal.closeModal(this._config.modal.dialog);
+          webinarSignupFormGroup.resetInputs(
+            webinarSignupFormGroup.name,
+            webinarSignupFormGroup.email,
+            webinarSignupFormGroup.tel
+          );
+
+          this._config.btn.textContent = 'Записаться на вебинар';
+        }, this._config.timeoutBeforeBtnTextChange);
+      } else throw new Error('Invalid input');
+    }
   }
 
-  sendInputTo(bot) {
-    console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
-    // const msg = createMsg(webinarSignupModal.inputsData);
-    const url = `https://api.telegram.org/bot${
-      bot.authToken
-    }/sendMessage?chat_id=${bot.chatID}&text="${bot.createWebinarSignupMsg(
-      webinarSignupFormGroup.inputsData
-    )}"&parse_mode=${bot.parseMode}&disable_notification=${bot.disableNotif}`;
+  sendInputTo(bots) {
+    bots.forEach(bot => {
+      console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
 
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        throw new Error(error);
-      });
+      const url = `https://api.telegram.org/bot${
+        bot.authToken
+      }/sendMessage?chat_id=${bot.chatID}&text="${bot.createWebinarSignupMsg(
+        webinarSignupFormGroup.inputsData
+      )}"&parse_mode=${bot.parseMode}&disable_notification=${bot.disableNotif}`;
+
+      fetch(url)
+        .then(response => {
+          return response.json();
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          throw new Error(error);
+        });
+    });
   }
 }
 
-const config = {
-  IDs: {
-    btn: 'webinar-signup-btn',
-    dialog: 'webinar-sign-up-dialog',
-  },
-  classes: {
-    // modal: 'modal_webinar-signup', // modal bg
-  },
-  modalInstance: webinarSignupModal,
-  timeoutBeforeBtnTextChange: 2000,
-  bot: myTelegramBot,
-};
+//
 
-const webinarSignupBtn = new WebinarSignupBtn(config);
+const webinarSignupTriggerBtnEl = document.querySelector(
+  '#webinar-signup-trigger-btn'
+);
+
+const webinarSignupTriggerBtn = new Btn({
+  btn: webinarSignupTriggerBtnEl,
+  modal: webinarSignupModal,
+});
+
+webinarSignupTriggerBtnEl.addEventListener('click', webinarSignupTriggerBtn);
+
+//
+
+const webinarSignupBtnEl = document.querySelector('#webinar-signup-btn');
+
+const webinarSignupBtn = new WebinarSignupBtn({
+  btn: webinarSignupBtnEl,
+  modal: webinarSignupModal,
+  timeoutBeforeBtnTextChange: 2000,
+  bots: [myTelegramBot, ypenTelegramBot],
+});
+
+webinarSignupBtnEl.addEventListener('click', webinarSignupBtn);

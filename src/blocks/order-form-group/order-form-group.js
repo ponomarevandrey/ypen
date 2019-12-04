@@ -4,8 +4,6 @@ class OrderFormGroup extends FormGroup {
   constructor(config) {
     super(config);
 
-    // this._name, this._email ... are created automatically in the loop above
-
     this.name.addEventListener('focusout', () => {
       this.validateName(this.name);
     });
