@@ -17,6 +17,33 @@
 
   //
 
+  &__link {
+    text-decoration: none;
+
+    &:link {
+      color: $color_black;
+      transition: all 0.2s linear;
+    }
+
+    &:visited {
+      color: $color_black;
+    }
+
+    &:hover {
+      color: lighten($color_gray-dark, 15%);
+    }
+
+    &:focus {
+      color: lighten($color_link, 15%);
+    }
+
+    &:active {
+      color: lighten($color_link, 15%);
+    }
+  }
+
+  //
+
   &__logo {
     padding-right: 0;
     justify-self: center;
