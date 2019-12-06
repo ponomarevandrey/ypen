@@ -46,7 +46,7 @@ class WebinarSignupBtn extends Btn {
 
   sendInputTo(bots) {
     bots.forEach(bot => {
-      console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
+      // console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
 
       const url = `https://api.telegram.org/bot${
         bot.authToken
@@ -59,7 +59,10 @@ class WebinarSignupBtn extends Btn {
           return response.json();
         })
         .then(response => {
-          console.log(response);
+          console.log(
+            `Response from bot: ${response.result.from.first_name} (${response.result.from.username}) `,
+            response
+          );
         })
         .catch(error => {
           throw new Error(error);
