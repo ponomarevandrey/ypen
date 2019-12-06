@@ -1,5 +1,6 @@
 class TelegramBot {
-  constructor({ authToken, chatID, parseMode, disableNotif }) {
+  constructor({ name, authToken, chatID, parseMode, disableNotif }) {
+    this.name = name;
     this.authToken = authToken;
     this.chatID = chatID;
     this.parseMode = parseMode;
@@ -44,23 +45,24 @@ class TelegramBot {
   }
 }
 
-const config = {
-  'Andrey Ponomarev': {
+const userConfigs = [
+  {
+    name: 'Andrey Ponomarev',
     authToken: '906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng',
     chatID: '338459496',
     parseMode: 'Markdown',
     disableNotif: true,
   },
-
-  'Evgeniy Paykachev': {
+  {
+    name: 'Evgeniy Paykachev',
     authToken: '882907516:AAGrseLPtW0TvCaB5a1yk_MxiZVRvQjhXRQ',
     chatID: '935966517',
     parseMode: 'Markdown',
     disableNotif: true,
   },
-};
+];
 
-const myTelegramBot = new TelegramBot(config['Andrey Ponomarev']);
-const ypenTelegramBot = new TelegramBot(config['Evgeniy Paykachev']);
+const myTelegramBot = new TelegramBot(userConfigs[0]);
+const ypenTelegramBot = new TelegramBot(userConfigs[1]);
 
 export { myTelegramBot, ypenTelegramBot };

@@ -12,6 +12,7 @@ import { Btn } from '../btn/btn';
 import { confirmOrderModal } from '../confirm-order-modal/confirm-order-modal';
 import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
 import { orderFormGroup } from '../order-form-group/order-form-group';
+import { continueStatement } from 'babel-types';
 
 class OrderBtn extends Btn {
   constructor(config) {
@@ -41,9 +42,8 @@ class OrderBtn extends Btn {
   }
 
   sendInputTo(bots) {
-    console.log('run');
     bots.forEach(bot => {
-      console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
+      // console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
 
       const url = `https://api.telegram.org/bot${
         bot.authToken
@@ -56,7 +56,10 @@ class OrderBtn extends Btn {
           return response.json();
         })
         .then(response => {
-          console.log(response);
+          console.log(
+            `Response from bot: ${response.result.from.first_name} (${response.result.from.username}) `,
+            response
+          );
         })
         .catch(error => {
           throw new Error(error);
@@ -64,19 +67,6 @@ class OrderBtn extends Btn {
     });
   }
 }
-
-//
-/*
-const orderTriggerBtnEl = document.querySelector('#order-trigger-btn');
-
-const orderTriggerBtn = new Btn({
-  btn: orderTriggerBtnEl,
-  modal: confirmOrderModal,
-});
-
-orderTriggerBtnEl.addEventListener('click', orderTriggerBtn);
-*/
-//
 
 const orderBtnEl = document.querySelector('#order-trigger-btn');
 

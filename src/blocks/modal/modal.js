@@ -18,7 +18,6 @@ class Modal {
   // confirm order moda:
   onClick(e) {
     const clickedEl = e.target;
-    console.log('inside modal');
 
     if (clickedEl === this._backdrop || clickedEl === this._closeBtn) {
       this.closeModal(this.dialog); // webinar signup modal: this.closeModal();
@@ -43,7 +42,6 @@ class Modal {
   }
 
   openModal(dialog) {
-    console.log('dialog: ', dialog);
     const newDialog = document.querySelector(`#${dialog.id}`);
     const visibleDialog = document.querySelector(
       `.${this._config.classes.dialogStateModifier}`
