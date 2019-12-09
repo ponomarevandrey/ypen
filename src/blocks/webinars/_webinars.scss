@@ -1,3 +1,10 @@
+iframe > * {
+  overflow: hidden;
+  border: 1px solid red;
+  padding: 0;
+  margin: 0;
+}
+
 .webinars-wrapper {
   background-color: $color_brand_yellow;
   margin-bottom: 3rem;
@@ -11,6 +18,7 @@
   padding: 4rem 4vw;
   overflow: hidden;
 
+  /*
   &__content {
     display: grid;
     grid-template-columns: 1fr;
@@ -22,6 +30,27 @@
       grid-template-columns: minmax(150px, 0.5fr) 1fr;
       grid-gap: 4rem;
       align-items: center;
+    }
+  }
+  */
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding-top: 4rem;
+
+    @media screen and (min-width: $screen-lg) {
+      grid-template-columns: minmax(150px, 0.5fr) minmax(320px, 1fr) minmax(
+          320px,
+          0.7fr
+        );
+    }
+
+    @media screen and (min-width: $screen-md) {
+      text-align: center;
+      grid-gap: 4rem;
+      align-items: flex-start;
     }
   }
 

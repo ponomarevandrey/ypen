@@ -12,7 +12,6 @@ import { Btn } from '../btn/btn';
 import { confirmOrderModal } from '../confirm-order-modal/confirm-order-modal';
 import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
 import { orderFormGroup } from '../order-form-group/order-form-group';
-import { continueStatement } from 'babel-types';
 
 class OrderBtn extends Btn {
   constructor(config) {

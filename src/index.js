@@ -57,31 +57,31 @@ import './blocks/order/_order.scss';
 
 import './blocks/order-calculator/_order-calculator.scss';
 
-import './blocks/telegram-bot/telegram-bot.js';
+// import './blocks/telegram-bot/telegram-bot.js';
 
 import './blocks/btn/_btn.scss';
-import './blocks/btn/btn.js';
+// import './blocks/btn/btn.js';
 
-import './blocks/form-group/_form-group.scss';
-import './blocks/form-group/form-group.js';
+// import './blocks/form-group/_form-group.scss';
+// import './blocks/form-group/form-group.js';
 
 import './blocks/modal/_modal.scss';
 import './blocks/modal/modal.js';
 
-import './blocks/webinar-signup-modal/webinar-signup-modal.js';
+// import './blocks/webinar-signup-modal/webinar-signup-modal.js';
 
 import './blocks/webinar-signup-btn/_webinar-signup-btn.scss';
-import './blocks/webinar-signup-btn/webinar-signup-btn.js';
+// import './blocks/webinar-signup-btn/webinar-signup-btn.js';
 
-import './blocks/webinar-signup-form-group/webinar-signup-form-group.js';
+// import './blocks/webinar-signup-form-group/webinar-signup-form-group.js';
 
 import './blocks/order-btn/_order-btn.scss';
-import './blocks/order-btn/order-btn.js';
+// import './blocks/order-btn/order-btn.js';
 
 import './blocks/order-form-group/_order-form-group.scss';
-import './blocks/order-form-group/order-form-group.js';
+// import './blocks/order-form-group/order-form-group.js';
 
-import './blocks/confirm-order-modal/confirm-order-modal.js';
+// import './blocks/confirm-order-modal/confirm-order-modal.js';
 
 import './blocks/reviews/_reviews.scss';
 import './blocks/reviews/reviews.js';

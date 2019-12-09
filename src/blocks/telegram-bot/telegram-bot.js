@@ -22,11 +22,15 @@ class TelegramBot {
     Телефон: ${tel}`;
   }
 
-  // Helper function to find out bot's chatID when you create a new bot.
-  //
-  // Before calling this function, open Telegram and send two messages
-  // with any text to your bot, otherwise the function won't be able to
-  // retrieve chatID:
+  /**
+   * Helper function to find out bot's chatID when you create a new bot.
+   * Before calling this function, open Telegram and send two messages
+   * with any text to your bot, otherwise the function won't be able to
+   * retrieve chatID:
+   *
+   * @param {String} authToken - user's authorization token
+   * @returns console message with chatId
+   */
   retrieveChatID(authToken) {
     const url = `https://api.telegram.org/bot${authToken}/getUpdates`;
 
@@ -35,9 +39,15 @@ class TelegramBot {
         return response.json();
       })
       .then(response => {
+        console.log(response);
         // Telegram chat ID is the same for all messages:
-        const chatID = response.result[0].message.chat.id;
-        console.log(chatID);
+        if (response.result[0]) {
+          const chatID = response.result[0].message.chat.id;
+          console.log(`Telegram chat.id: ${chatID}`);
+        } else
+          console.log(
+            'Chat is empty! You need to send a few messages to your bot in Telegram app and then try to call the method again'
+          );
       })
       .catch(error => {
         throw new Error(error);
@@ -64,5 +74,7 @@ const userConfigs = [
 
 const myTelegramBot = new TelegramBot(userConfigs[0]);
 const ypenTelegramBot = new TelegramBot(userConfigs[1]);
+
+console.log(myTelegramBot.retrieveChatID(userConfigs[0].authToken));
 
 export { myTelegramBot, ypenTelegramBot };
