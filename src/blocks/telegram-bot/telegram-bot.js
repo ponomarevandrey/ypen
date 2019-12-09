@@ -7,6 +7,10 @@ class TelegramBot {
     this.disableNotif = disableNotif;
   }
 
+  get chadID() {}
+
+  sendMsg(msg) {}
+
   createOrderMsg({ name, email, tel, address }) {
     return `ЗАКАЗ РУЧКИ %0A %0A
     Имя: ${name} %0A
@@ -20,6 +24,20 @@ class TelegramBot {
     Имя: ${name} %0A 
     E-mail: ${email} %0A 
     Телефон: ${tel}`;
+  }
+}
+
+class TelegramBotManager {
+  constructor(name, authToken, chatID, parseMode, disableNotif) {
+    this.name = name;
+    this.authToken = authToken;
+    this.chatID = chatID;
+    this.parseMode = parseMode;
+    this.disableNotif = disableNotif;
+  }
+
+  createBot(config) {
+    return new TelegramBot(config);
   }
 
   // Helper function to find out bot's chatID when you create a new bot.
@@ -36,8 +54,12 @@ class TelegramBot {
       })
       .then(response => {
         // Telegram chat ID is the same for all messages:
-        const chatID = response.result[0].message.chat.id;
-        console.log(chatID);
+        if (response.result[0]) {
+          const chatID = response.result[0].message.chat.id;
+          console.log(chatID);
+        } else {
+          throw new Error('Telegram bot: ');
+        }
       })
       .catch(error => {
         throw new Error(error);
@@ -64,5 +86,7 @@ const userConfigs = [
 
 const myTelegramBot = new TelegramBot(userConfigs[0]);
 const ypenTelegramBot = new TelegramBot(userConfigs[1]);
+
+myTelegramBot.retrieveChatID(userConfigs[0].authToken);
 
 export { myTelegramBot, ypenTelegramBot };

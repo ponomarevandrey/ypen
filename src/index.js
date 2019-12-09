@@ -83,8 +83,8 @@ import './blocks/order-form-group/order-form-group.js';
 
 import './blocks/confirm-order-modal/confirm-order-modal.js';
 
-import './blocks/reviews/_reviews.scss';
-import './blocks/reviews/reviews.js';
+// import './blocks/reviews/_reviews.scss';
+// import './blocks/reviews/reviews.js';
 
 import './blocks/footer/_footer.scss';
 
