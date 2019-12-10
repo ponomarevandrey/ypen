@@ -1,15 +1,29 @@
 class TelegramBot {
-  constructor({ name, authToken, chatID, parseMode, disableNotif }) {
-    this.name = name;
-    this.authToken = authToken;
-    this.chatID = chatID;
-    this.parseMode = parseMode;
-    this.disableNotif = disableNotif;
+  constructor(config) {
+    for (let prop in config) {
+      this[`${prop}`] = config[prop];
+    }
   }
 
-  get chadID() {}
+  sendMsg(data) {
+    //console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
+    const newMsg = this.createOrderMsg(data);
+    const url = `https://api.telegram.org/bot${this.authToken}/sendMessage?chat_id=${this.chatID}&text="${newMsg}"&parse_mode=${this.parseMode}&disable_notification=${this.disableNotif}`;
 
-  sendMsg(msg) {}
+    fetch(url)
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        console.log(
+          `Response from bot: ${response.result.from.first_name} (${response.result.from.username}) `,
+          response
+        );
+      })
+      .catch(error => {
+        throw new Error(error);
+      });
+  }
 
   createOrderMsg({ name, email, tel, address }) {
     return `ЗАКАЗ РУЧКИ %0A %0A
@@ -27,66 +41,73 @@ class TelegramBot {
   }
 }
 
-class TelegramBotManager {
-  constructor(name, authToken, chatID, parseMode, disableNotif) {
-    this.name = name;
-    this.authToken = authToken;
-    this.chatID = chatID;
-    this.parseMode = parseMode;
-    this.disableNotif = disableNotif;
-  }
+//
 
-  createBot(config) {
-    return new TelegramBot(config);
-  }
+const BotManager = (function() {
+  let instance;
 
-  // Helper function to find out bot's chatID when you create a new bot.
-  //
-  // Before calling this function, open Telegram and send two messages
-  // with any text to your bot, otherwise the function won't be able to
-  // retrieve chatID:
-  retrieveChatID(authToken) {
-    const url = `https://api.telegram.org/bot${authToken}/getUpdates`;
+  return class {
+    constructor() {
+      if (!instance) instance = this;
+      return instance;
+    }
 
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(response => {
-        // Telegram chat ID is the same for all messages:
-        if (response.result[0]) {
-          const chatID = response.result[0].message.chat.id;
-          console.log(chatID);
-        } else {
-          throw new Error('Telegram bot: ');
-        }
-      })
-      .catch(error => {
-        throw new Error(error);
-      });
-  }
-}
+    createBot(config) {
+      const bot = (this[`${config.name}`] = new TelegramBot(config));
+      return bot;
+    }
 
-const userConfigs = [
-  {
-    name: 'Andrey Ponomarev',
-    authToken: '906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng',
-    chatID: '338459496',
-    parseMode: 'Markdown',
-    disableNotif: true,
-  },
-  {
-    name: 'Evgeniy Paykachev',
-    authToken: '882907516:AAGrseLPtW0TvCaB5a1yk_MxiZVRvQjhXRQ',
-    chatID: '935966517',
-    parseMode: 'Markdown',
-    disableNotif: true,
-  },
-];
+    // Helper function to find out bot's chatID when you create a new bot.
+    //
+    // Before calling this function, open Telegram and send two messages
+    // with any text to your bot, otherwise the function won't be able to
+    // retrieve chatID:
+    retrieveChatID(authToken) {
+      const url = `https://api.telegram.org/bot${authToken}/getUpdates`;
 
-const myTelegramBot = new TelegramBot(userConfigs[0]);
-const ypenTelegramBot = new TelegramBot(userConfigs[1]);
+      fetch(url)
+        .then(response => {
+          return response.json();
+        })
+        .then(response => {
+          // Telegram chat ID is the same for all messages:
+          if (response.result[0]) {
+            console.log(
+              `Your Telegram bot's chatID: ${response.result[0].message.chat.id}`
+            );
+          } else {
+            throw new Error(
+              "Can't retrieve chatID. Please, open your bot's chat in Telegram app and send him a few messages"
+            );
+          }
+        })
+        .catch(error => {
+          throw new Error(error);
+        });
+    }
+  };
+})();
 
-myTelegramBot.retrieveChatID(userConfigs[0].authToken);
+const botManager = new BotManager();
 
-export { myTelegramBot, ypenTelegramBot };
+/*
+ * use botManager.retrieveChatID(<authToken>) to find out your chatID
+ */
+
+const myTelegramBot = botManager.createBot({
+  name: 'Andrey Ponomarev',
+  authToken: '906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng',
+  chatID: '338459496',
+  parseMode: 'Markdown',
+  disableNotif: true,
+});
+
+const spaceSausageBot = botManager.createBot({
+  name: 'Space Sausage',
+  authToken: '1044567822:AAGPXUeLlAumoCzrzlnsPnN3yuxAXHqSN2o',
+  chatID: '338459496',
+  parseMode: 'Markdown',
+  disableNotif: true,
+});
+
+export { myTelegramBot, spaceSausageBot };

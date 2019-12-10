@@ -10,9 +10,8 @@
 import { Btn } from '../btn/btn';
 
 import { confirmOrderModal } from '../confirm-order-modal/confirm-order-modal';
-import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
+import { myTelegramBot, spaceSausageBot } from '../telegram-bot/telegram-bot';
 import { orderFormGroup } from '../order-form-group/order-form-group';
-import { continueStatement } from 'babel-types';
 
 class OrderBtn extends Btn {
   constructor(config) {
@@ -28,7 +27,9 @@ class OrderBtn extends Btn {
         orderFormGroup.validateAddress(orderFormGroup.address);
 
       if (isValid) {
-        this.sendInputTo(this._config.bots);
+        this._config.bots.forEach(bot => {
+          bot.sendMsg(orderFormGroup.inputsData);
+        });
 
         confirmOrderModal.openModal(this._config.modal.dialog);
         orderFormGroup.resetInputs(
@@ -40,32 +41,6 @@ class OrderBtn extends Btn {
       } else throw new Error('Invalid input');
     }
   }
-
-  sendInputTo(bots) {
-    bots.forEach(bot => {
-      // console.log(bot.authToken, bot.chatID, bot.parseMode, bot.disableNotif);
-
-      const url = `https://api.telegram.org/bot${
-        bot.authToken
-      }/sendMessage?chat_id=${bot.chatID}&text="${bot.createOrderMsg(
-        orderFormGroup.inputsData
-      )}"&parse_mode=${bot.parseMode}&disable_notification=${bot.disableNotif}`;
-
-      fetch(url)
-        .then(response => {
-          return response.json();
-        })
-        .then(response => {
-          console.log(
-            `Response from bot: ${response.result.from.first_name} (${response.result.from.username}) `,
-            response
-          );
-        })
-        .catch(error => {
-          throw new Error(error);
-        });
-    });
-  }
 }
 
 const orderBtnEl = document.querySelector('#order-trigger-btn');
@@ -74,7 +49,7 @@ const orderBtn = new OrderBtn({
   btn: orderBtnEl,
   modal: confirmOrderModal,
   timeoutBeforeBtnTextChange: 2000,
-  bots: [myTelegramBot, ypenTelegramBot],
+  bots: [myTelegramBot, spaceSausageBot],
 });
 
 orderBtnEl.addEventListener('click', orderBtn);
