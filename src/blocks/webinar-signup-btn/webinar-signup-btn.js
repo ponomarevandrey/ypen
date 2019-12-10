@@ -11,7 +11,7 @@
 import { Btn } from '../btn/btn';
 
 import { webinarSignupModal } from '../webinar-signup-modal/webinar-signup-modal';
-import { myTelegramBot, ypenTelegramBot } from '../telegram-bot/telegram-bot';
+import { myTelegramBot, spaceSausageBot } from '../telegram-bot/telegram-bot';
 import { webinarSignupFormGroup } from '../webinar-signup-form-group/webinar-signup-form-group';
 
 class WebinarSignupBtn extends Btn {
@@ -27,7 +27,10 @@ class WebinarSignupBtn extends Btn {
         webinarSignupFormGroup.validateTel(webinarSignupFormGroup.tel);
 
       if (isValid) {
-        this.sendInputTo(this._config.bots);
+        this._config.bots.forEach(bot => {
+          bot.sendMsg(webinarSignupFormGroup.inputsData);
+        });
+
         this._config.btn.textContent = 'Спасибо!';
 
         setTimeout(() => {
@@ -92,7 +95,7 @@ const webinarSignupBtn = new WebinarSignupBtn({
   btn: webinarSignupBtnEl,
   modal: webinarSignupModal,
   timeoutBeforeBtnTextChange: 2000,
-  bots: [myTelegramBot, ypenTelegramBot],
+  bots: [myTelegramBot, spaceSausageBot],
 });
 
 webinarSignupBtnEl.addEventListener('click', webinarSignupBtn);
