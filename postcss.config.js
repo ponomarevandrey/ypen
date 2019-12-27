@@ -1,10 +1,10 @@
 module.exports = {
   plugins: [
-    require('autoprefixer'),
+    require("autoprefixer"),
 
-    require('cssnano')({
+    require("cssnano")({
       preset: [
-        'default',
+        "default",
         {
           normalizeWhitespace: false, // uglify bundled css code
         },

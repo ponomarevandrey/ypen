@@ -8,11 +8,11 @@
  *
  */
 
-import { Btn } from '../btn/btn';
+import { Btn } from "../btn/btn";
 
-import { webinarSignupModal } from '../webinar-signup-modal/webinar-signup-modal';
-import { myTelegramBot, spaceSausageBot } from '../telegram-bot/telegram-bot';
-import { webinarSignupFormGroup } from '../webinar-signup-form-group/webinar-signup-form-group';
+import { webinarSignupModal } from "../webinar-signup-modal/webinar-signup-modal";
+import { myTelegramBot, spaceSausageBot } from "../telegram-bot/telegram-bot";
+import { webinarSignupFormGroup } from "../webinar-signup-form-group/webinar-signup-form-group";
 
 class WebinarSignupBtn extends Btn {
   constructor(config) {
@@ -20,7 +20,7 @@ class WebinarSignupBtn extends Btn {
   }
 
   handleEvent(e) {
-    if (e.type === 'click') {
+    if (e.type === "click") {
       const isValid =
         webinarSignupFormGroup.validateName(webinarSignupFormGroup.name) &&
         webinarSignupFormGroup.validateEmail(webinarSignupFormGroup.email) &&
@@ -31,7 +31,7 @@ class WebinarSignupBtn extends Btn {
           bot.sendMsg(webinarSignupFormGroup.inputsData);
         });
 
-        this._config.btn.textContent = 'Спасибо!';
+        this._config.btn.textContent = "Спасибо!";
 
         setTimeout(() => {
           webinarSignupModal.closeModal(this._config.modal.dialog);
@@ -41,9 +41,9 @@ class WebinarSignupBtn extends Btn {
             webinarSignupFormGroup.tel
           );
 
-          this._config.btn.textContent = 'Записаться на вебинар';
+          this._config.btn.textContent = "Записаться на вебинар";
         }, this._config.timeoutBeforeBtnTextChange);
-      } else throw new Error('Invalid input');
+      } else throw new Error("Invalid input");
     }
   }
 
@@ -77,7 +77,7 @@ class WebinarSignupBtn extends Btn {
 //
 
 const webinarSignupTriggerBtnEl = document.querySelector(
-  '#webinar-signup-trigger-btn'
+  "#webinar-signup-trigger-btn"
 );
 
 const webinarSignupTriggerBtn = new Btn({
@@ -85,11 +85,11 @@ const webinarSignupTriggerBtn = new Btn({
   modal: webinarSignupModal,
 });
 
-webinarSignupTriggerBtnEl.addEventListener('click', webinarSignupTriggerBtn);
+webinarSignupTriggerBtnEl.addEventListener("click", webinarSignupTriggerBtn);
 
 //
 
-const webinarSignupBtnEl = document.querySelector('#webinar-signup-btn');
+const webinarSignupBtnEl = document.querySelector("#webinar-signup-btn");
 
 const webinarSignupBtn = new WebinarSignupBtn({
   btn: webinarSignupBtnEl,
@@ -98,4 +98,4 @@ const webinarSignupBtn = new WebinarSignupBtn({
   bots: [myTelegramBot, spaceSausageBot],
 });
 
-webinarSignupBtnEl.addEventListener('click', webinarSignupBtn);
+webinarSignupBtnEl.addEventListener("click", webinarSignupBtn);

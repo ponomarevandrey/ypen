@@ -95,18 +95,18 @@ const botManager = new BotManager();
  */
 
 const myTelegramBot = botManager.createBot({
-  name: 'Andrey Ponomarev',
-  authToken: '906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng',
-  chatID: '338459496',
-  parseMode: 'Markdown',
+  name: "Andrey Ponomarev",
+  authToken: "906724281:AAHXgqvLA_iKEZozDg3yML0InQBPg4nHfng",
+  chatID: "338459496",
+  parseMode: "Markdown",
   disableNotif: true,
 });
 
 const spaceSausageBot = botManager.createBot({
-  name: 'Space Sausage',
-  authToken: '1044567822:AAGPXUeLlAumoCzrzlnsPnN3yuxAXHqSN2o',
-  chatID: '338459496',
-  parseMode: 'Markdown',
+  name: "Space Sausage",
+  authToken: "1044567822:AAGPXUeLlAumoCzrzlnsPnN3yuxAXHqSN2o",
+  chatID: "338459496",
+  parseMode: "Markdown",
   disableNotif: true,
 });
 
