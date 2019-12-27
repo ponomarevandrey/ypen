@@ -4,7 +4,7 @@ class Btn {
   }
 
   handleEvent(e) {
-    if (e.type === 'click') {
+    if (e.type === "click") {
       e.preventDefault();
       this._config.modal.openModal(this._config.modal.dialog);
     }

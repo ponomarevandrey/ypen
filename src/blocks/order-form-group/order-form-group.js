@@ -1,28 +1,28 @@
-import { FormGroup } from '../form-group/form-group';
+import { FormGroup } from "../form-group/form-group";
 
 class OrderFormGroup extends FormGroup {
   constructor(config) {
     super(config);
 
-    this.name.addEventListener('focusout', () => {
+    this.name.addEventListener("focusout", () => {
       this.validateName(this.name);
     });
 
-    this.email.addEventListener('focusout', () => {
+    this.email.addEventListener("focusout", () => {
       this.validateEmail(this.email);
     });
 
-    this.tel.addEventListener('focusout', () => {
+    this.tel.addEventListener("focusout", () => {
       this.validateTel(this.tel);
     });
-    this.address.addEventListener('focusout', () => {
+    this.address.addEventListener("focusout", () => {
       this.validateAddress(this.address);
     });
   }
 
   displayConfirmMsg() {
-    const confirmMsg = document.querySelector('.order__confirm-msg');
-    confirmMsg.classList.remove('order__confirm-msg_hidden');
+    const confirmMsg = document.querySelector(".order__confirm-msg");
+    confirmMsg.classList.remove("order__confirm-msg_hidden");
   }
 
   get inputsData() {
@@ -36,12 +36,12 @@ class OrderFormGroup extends FormGroup {
 }
 
 const config = {
-  blockID: 'order',
+  blockID: "order",
   inputIDs: {
-    name: 'order-name',
-    email: 'order-email',
-    tel: 'order-tel',
-    address: 'order-address',
+    name: "order-name",
+    email: "order-email",
+    tel: "order-tel",
+    address: "order-address",
   },
 };
 

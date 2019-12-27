@@ -19,12 +19,12 @@ $line-height_lg: 1.7;
 $line-height_xl: 1.9;
 $line-height_xxl: 2.1;
 
-$font-stack_open-sans: 'Open Sans', Arial, Helvetica, sans-serif;
-$font-stack_gill-sans: 'Gill Sans Pro Cyrillic', Arial, Helvetica, sans-serif;
-$font-stack_georgia: Georgia, 'Big Caslon', 'Hoefler Text', Garamond,
-  Baskerville, 'Palatino Linotype', 'Times New Roman', Times, serif;
-$font-stack_consolas: Consolas, 'Lucida Console', 'Lucida Sans Typewriter',
-  'Courier New', Courier, monospace;
+$font-stack_open-sans: "Open Sans", Arial, Helvetica, sans-serif;
+$font-stack_gill-sans: "Gill Sans Pro Cyrillic", Arial, Helvetica, sans-serif;
+$font-stack_georgia: Georgia, "Big Caslon", "Hoefler Text", Garamond,
+  Baskerville, "Palatino Linotype", "Times New Roman", Times, serif;
+$font-stack_consolas: Consolas, "Lucida Console", "Lucida Sans Typewriter",
+  "Courier New", Courier, monospace;
 
 $font-size_h1: 3.052rem;
 $font-size_h2: 2.441rem;
@@ -108,8 +108,8 @@ $border_radius: 0.3em !default;
 
 // Typography
 @mixin font-face__gillsans-bold {
-  font-family: 'Gill Sans Pro Cyrillic';
-  src: url('./GillSansProCyrillic-Bold.woff2') format('woff2');
+  font-family: "Gill Sans Pro Cyrillic";
+  src: url("./GillSansProCyrillic-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;

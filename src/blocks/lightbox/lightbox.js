@@ -9,17 +9,17 @@ class Lightbox {
       `.${this._config.classes.closeBtn}`
     );
 
-    this._slides = document.querySelectorAll('.lightbox__dialog');
+    this._slides = document.querySelectorAll(".lightbox__dialog");
     this._counter = 0;
     this._amount = this._slides.length;
 
     const prevBtn = document.querySelector(`#${this._config.classes.prevBtn}`);
     const nextBtn = document.querySelector(`#${this._config.classes.nextBtn}`);
-    prevBtn.addEventListener('click', e => this.navigate(e, -1));
-    nextBtn.addEventListener('click', e => this.navigate(e, 1));
+    prevBtn.addEventListener("click", e => this.navigate(e, -1));
+    nextBtn.addEventListener("click", e => this.navigate(e, 1));
 
-    document.addEventListener('click', e => this.onClick(e));
-    document.addEventListener('keydown', e => this.onKeydown(e));
+    document.addEventListener("click", e => this.onClick(e));
+    document.addEventListener("keydown", e => this.onKeydown(e));
   }
 
   getElemIndex(elem) {
@@ -49,13 +49,13 @@ class Lightbox {
 
     this.showDialog(newDialog);
     this._openedDialog = newDialog;
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   }
 
   closeLightbox() {
     this.toggleBackdrop();
     delete this._openedDialog;
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
     return;
   }
 
@@ -75,10 +75,10 @@ class Lightbox {
   }
 
   onKeydown(e) {
-    if (this._openedDialog && e.code === 'Escape') {
+    if (this._openedDialog && e.code === "Escape") {
       this.toggleBackdrop();
       delete this._openedDialog;
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
       return;
     }
   }
@@ -99,13 +99,13 @@ class Lightbox {
 const config = {
   // all class names used in HTML related to Lightbox window component:
   classes: {
-    backdrop: 'lightbox',
-    backdropStateModifier: 'lightbox_visible',
-    dialogStateModifier: 'lightbox__dialog_visible',
-    closeBtn: 'lightbox__close-btn',
-    prevBtn: 'lightbox-btn-prev',
-    nextBtn: 'lightbox-btn-next',
-    video: 'embed',
+    backdrop: "lightbox",
+    backdropStateModifier: "lightbox_visible",
+    dialogStateModifier: "lightbox__dialog_visible",
+    closeBtn: "lightbox__close-btn",
+    prevBtn: "lightbox-btn-prev",
+    nextBtn: "lightbox-btn-next",
+    video: "embed",
   },
 };
 

@@ -7,11 +7,11 @@
  * How to use: https://core.telegram.org/bots
  *
  */
-import { Btn } from '../btn/btn';
+import { Btn } from "../btn/btn";
 
-import { confirmOrderModal } from '../confirm-order-modal/confirm-order-modal';
-import { myTelegramBot, spaceSausageBot } from '../telegram-bot/telegram-bot';
-import { orderFormGroup } from '../order-form-group/order-form-group';
+import { confirmOrderModal } from "../confirm-order-modal/confirm-order-modal";
+import { myTelegramBot, spaceSausageBot } from "../telegram-bot/telegram-bot";
+import { orderFormGroup } from "../order-form-group/order-form-group";
 
 class OrderBtn extends Btn {
   constructor(config) {
@@ -19,7 +19,7 @@ class OrderBtn extends Btn {
   }
 
   handleEvent(e) {
-    if (e.type === 'click') {
+    if (e.type === "click") {
       const isValid =
         orderFormGroup.validateName(orderFormGroup.name) &&
         orderFormGroup.validateEmail(orderFormGroup.email) &&
@@ -38,12 +38,12 @@ class OrderBtn extends Btn {
           orderFormGroup.tel,
           orderFormGroup.address
         );
-      } else throw new Error('Invalid input');
+      } else throw new Error("Invalid input");
     }
   }
 }
 
-const orderBtnEl = document.querySelector('#order-trigger-btn');
+const orderBtnEl = document.querySelector("#order-trigger-btn");
 
 const orderBtn = new OrderBtn({
   btn: orderBtnEl,
@@ -52,4 +52,4 @@ const orderBtn = new OrderBtn({
   bots: [myTelegramBot, spaceSausageBot],
 });
 
-orderBtnEl.addEventListener('click', orderBtn);
+orderBtnEl.addEventListener("click", orderBtn);
